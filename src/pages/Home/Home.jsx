@@ -1,4 +1,4 @@
-import ProductCard from '../components/Card/Card';
+import ProductCard from '../../components/Card/Card';
 
 function Home() {
     return (
