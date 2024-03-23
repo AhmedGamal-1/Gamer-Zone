@@ -9,13 +9,14 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Card.css';
 import { Box } from '@mui/material';
-import { useState } from 'react';
+import { useFavorites } from '../../context/FavoritesContext';
 
 export default function ProductCard({ product }) {
-    const [fav, setFav] = useState(false);
+    const { favorites, toggleFavorite, isFavorite } = useFavorites();
+    const fav = isFavorite(product.id);
 
-    const toggleFav = () => {
-        setFav(!fav);
+    const handleToggle = () => {
+        toggleFavorite(product);
     };
 
     return (
@@ -28,7 +29,7 @@ export default function ProductCard({ product }) {
             }}
         >
             {fav ? (
-                <IconButton className="fav-btn" onClick={toggleFav}>
+                <IconButton className="fav-btn" onClick={handleToggle}>
                     <FavoriteIcon
                         sx={{
                             fontSize: '25px',
@@ -38,7 +39,7 @@ export default function ProductCard({ product }) {
                     />
                 </IconButton>
             ) : (
-                <IconButton className="fav-btn" onClick={toggleFav}>
+                <IconButton className="fav-btn" onClick={handleToggle}>
                     <FavoriteBorderOutlinedIcon
                         sx={{
                             fontSize: '25px',

@@ -1,5 +1,11 @@
+import PaginationControlled from '../../components/Pagination/PaginationControlled';
+
 function ProductDetails() {
-  return <div>Product details</div>;
+    return (
+        <div>
+            <PaginationControlled />
+        </div>
+    );
 }
 
 export default ProductDetails;

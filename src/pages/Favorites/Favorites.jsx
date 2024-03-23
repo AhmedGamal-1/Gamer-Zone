@@ -1,5 +1,8 @@
+import { useFavorites } from '../../context/FavoritesContext';
+
 function Favorites() {
-    return <div>Favorite</div>;
+    const { favorites } = useFavorites();
+    return <div></div>;
 }
 
 export default Favorites;
