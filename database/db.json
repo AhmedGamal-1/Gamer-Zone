@@ -1,0 +1,214 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "PlayStation 5 Console - 1Y Warranty",
+            "price": 37999.0,
+            "description": "Unleashes new gaming possibilities with the latest generation of the gaming consoles PS5 that you never anticipated. Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games.",
+            "poster": "ps5.jpg",
+            "image": "ps5-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 2,
+            "name": "Sony PlayStation 5 Slim Console (Disc Edition)",
+            "price": 39999.0,
+            "description": "Experience cutting-edge gaming with the PlayStation 5 Slim Console. This sleek powerhouse boasts 1TB SSD storage, ultra-high-speed SSD for instant load times, and 4K-TV gaming at up to 120fps. Immerse yourself in realism with ray tracing and Tempest 3D AudioTech. The DualSense controller's haptic feedback and adaptive triggers enhance gameplay. Backwards compatibility lets you enjoy over 4,000 PS4 games. All that and more at the best price.",
+            "poster": "ps5.jpg",
+            "image": "ps5-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 3,
+            "name": "PlayStation 5 Console - Digital Edition",
+            "price": 35999.0,
+            "description": "The PS5 Digital Edition unleashes new gaming possibilities that you never anticipated. Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games. PS5 Digital Edition is an all-digital version of the PS5 console with no disc drive",
+            "poster": "ps5.jpg",
+            "image": "ps5-wallpaper.jpg",
+            "rating": 4.9,
+            "category": "consoles",
+            "recommendation": [{}]
+        },
+
+        {
+            "id": 4,
+            "name": "PlayStation 4 Console Slim 500GB - Used",
+            "price": 10999.0,
+            "description": "PlayStation 4 Console slim 500 G - USED. A Stunning New Design. A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
+            "poster": "ps4.jpg",
+            "image": "ps4-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 5,
+            "name": "PlayStation 4 Console Slim 1TB - Used",
+            "price": 12499.0,
+            "description": "PlayStation 4 Console slim 1TB - USED. A Stunning New Design. A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
+            "poster": "ps4.jpg",
+            "image": "ps4-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.8,
+            "recommendation": [{}]
+        },
+        {
+            "id": 6,
+            "name": "PlayStation 4 Console Slim 500GB - White",
+            "price": 11499.0,
+            "description": "PlayStation 4 Console slim 500GB -White -Used A Stunning New Design : A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
+            "poster": "ps4.jpg",
+            "image": "ps4-white-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 7,
+            "name": "PlayStation 4 Console Slim 1TB - Camouflage",
+            "price": 12999.0,
+            "description": "PlayStation 4 Console slim 1TB - USED A Stunning New Design : A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
+            "poster": "ps4-camouflage.jpg",
+            "image": "ps4-camouflage-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 8,
+            "name": "PlayStation 4 Console Pro 1TB - Spider Man",
+            "price": 13999.0,
+            "description": "Stunning graphical details With PS4 Pro, select games are enhanced as faces take on life-like realism, curves become smoother, corners are sharper and visual elements like hair, water and grass bristle with life.",
+            "poster": "ps4-spiderman.jpg",
+            "image": "ps4-spiderman-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 9,
+            "name": "PlayStation 4 Console Fat 500GB - Batman",
+            "price": 8999.0,
+            "description": "Immerse yourself in the extraordinary world of gaming with the PlayStation 4 Console Fat 500GB - Batman Limited Edition. Unleash the power of exclusive games, from indie gems to blockbuster hits. Experience endless entertainment at your fingertips and stay connected with friends through innovative features. Elevate your gaming journey at the best price!",
+            "poster": "ps4-batman.jpg",
+            "image": "ps4-batman-wallpaper.jpg",
+            "category": "consoles",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 10,
+            "name": "DualSense PS5 Controller - White",
+            "price": 4299.0,
+            "description": "PlayStation 5 DualSense Wireless Controller for PS5. PS5 controller offers immersive haptic feedback2, dynamic adaptive triggers2 and a built-in microphone, all integrated into an iconic design.",
+            "poster": "ps5-controller.jpg",
+            "image": "ps5-controller-wallpaper.jpg",
+            "category": "accessories",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 11,
+            "name": "DualSense PS5 Controller - Midnight Black",
+            "price": 4299.0,
+            "description": "Black PlayStation 5 DualSense wireless controller for PS5 console . Ignite your PS5 gaming nights with this sleek controller featuring two subtly different shades of black.",
+            "poster": "ps5-controller-black.jpg",
+            "image": "ps5-controller-black-wallpaper.jpg",
+            "category": "accessories",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 12,
+            "name": "DualSense PS5 Controller - Cosmic Red",
+            "price": 4399.0,
+            "description": "Cosmic red PlayStation 5 DualSense wireless controller for PS5 Explore new gaming frontiers with a vivid red design, complete with matching button details.",
+            "poster": "ps5-controller-cosmicRed.jpg",
+            "image": "ps5-controller-cosmicRed-wallpaper.jpg",
+            "category": "accessories",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 13,
+            "name": "DualSense PS5 Controller - Cosmic Red",
+            "price": 4399.0,
+            "description": "Cosmic red PlayStation 5 DualSense wireless controller for PS5 Explore new gaming frontiers with a vivid red design, complete with matching button details.",
+            "poster": "ps5-controller-cosmicRed.jpg",
+            "image": "ps5-controller-cosmicRed-wallpaper.jpg",
+            "category": "accessories",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 14,
+            "name": "Marvel's Spider Man 2",
+            "price": 3899.0,
+            "description": "Face the ultimate test of strength, both inside and outside the mask, playing as Peter and Miles as they try to balance their lives. Swing and jump through Marvel's New York as Spider-Men in this thrilling gaming evolution. Battle iconic villains like Venom and Kraven on PlayStation 5 for the best price. Unleash epic powers and save the city!",
+            "poster": "spiderman-ps5-game.jpg",
+            "image": "spiderman-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 15,
+            "name": "God Of War Ragnarok",
+            "price": 2399.0,
+            "description": "Together, Kratos and Atreus venture deep into the Nine Realms in search of answers as Asgardian forces prepare for war. Along the way they will explore stunning, mythical landscapes, gather allies from across the realms and face fearsome enemies in the form of Norse gods and monsters. Play it on PlayStation 5",
+            "poster": "god-of-war-ps5-game.jpg",
+            "image": "god-of-war-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.5,
+            "recommendation": [{}]
+        },
+        {
+            "id": 16,
+            "name": "The Legend of Zelda: Breath of the Wild",
+            "price": 1899.0,
+            "description": "Embark on an adventure of a lifetime in the breathtaking world of Hyrule. Explore vast landscapes, solve puzzles, and battle fearsome enemies as you uncover the secrets of the legendary kingdom. With innovative gameplay mechanics and stunning visuals, The Legend of Zelda: Breath of the Wild is a must-play masterpiece.",
+            "poster": "the-legend-of-zelda-ps5-game.jpg",
+            "image": "the-legend-of-zelda-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.8,
+            "recommendation": [{}]
+        },
+        {
+            "id": 17,
+            "name": "Red Dead Redemption 2",
+            "price": 1489.0,
+            "description": "Immerse yourself in the expansive open-world of the Wild West as Arthur Morgan, an outlaw on the run. Roam the rugged landscapes, engage in intense gunfights, and make tough moral choices that shape your destiny. With stunning graphics and a gripping narrative, Red Dead Redemption 2 sets a new standard for storytelling in gaming.",
+            "poster": "red-dead-redemption-2-ps5-game.jpg",
+            "image": "red-dead-redemption-2-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.7,
+            "recommendation": [{}]
+        },
+        {
+            "id": 18,
+            "name": "The Witcher 3: Wild Hunt",
+            "price": 1699.0,
+            "description": "Step into the shoes of Geralt of Rivia, a monster hunter for hire, in this epic open-world RPG adventure. Navigate through war-torn landscapes, engage in thrilling combat, and make impactful choices that shape the fate of the world around you. With its rich storytelling and immersive world, The Witcher 3: Wild Hunt offers unparalleled depth and replayability.",
+            "poster": "TheWitcher3-ps5-game.jpg",
+            "image": "TheWitcher3-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.8,
+            "recommendation": {}
+        },
+        {
+            "id": 19,
+            "name": "Uncharted 4: A Thief's End",
+            "price": 1699.0,
+            "description": "Join Nathan Drake on his greatest adventure yet as he embarks on a quest to uncover a long-lost pirate treasure. Navigate treacherous terrain, solve intricate puzzles, and outsmart ruthless enemies in this action-packed thrill ride. With breathtaking visuals and cinematic storytelling, Uncharted 4: A Thief's End is a journey you won't soon forget.",
+            "poster": "uncharted-ps5-game.jpg",
+            "image": "uncharted-ps5-game-wallpaper.jpg",
+            "category": "games",
+            "rating": 4.7,
+            "recommendation": {}
+        }
+    ]
+}
