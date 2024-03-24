@@ -50,14 +50,17 @@ export default function ProductCard({ product }) {
                     />
                 </IconButton>
             )}
-            <Link style={{ textDecoration: 'none' }} to={`/${product.id}`}>
+            <Link
+                style={{ textDecoration: 'none' }}
+                to={`/products/${product.id}`}
+            >
                 <CardMedia
                     sx={{ borderRadius: '10px', objectFit: 'cover' }}
                     component="img"
                     alt="green iguana"
                     height="320"
                     image={`/images/${product.poster}`}
-                />{' '}
+                />
             </Link>
             <Box
                 className="p-2 card-content"
@@ -68,7 +71,10 @@ export default function ProductCard({ product }) {
                     height: 'calc(100% - 320px)',
                 }}
             >
-                <Link style={{ textDecoration: 'none' }} to={`/${product.id}`}>
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to={`/products/${product.id}`}
+                >
                     <CardContent
                         sx={{
                             display: 'flex',

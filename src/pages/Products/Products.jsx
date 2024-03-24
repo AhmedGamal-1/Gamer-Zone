@@ -4,6 +4,7 @@ import './Products.css';
 import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
+import Search from '../../components/Search/Search';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -23,6 +24,7 @@ function Products() {
             max: 100000,
         },
     });
+    const [searchQuery, setSearchQuery] = useState('');
 
     // fetch all products
     useEffect(() => {
@@ -68,6 +70,22 @@ function Products() {
         setNewProducts(filteredProducts);
     }, [filter, products]);
 
+    // filter products based on search query
+    useEffect(() => {
+        if (searchQuery === '') {
+            return setNewProducts(products);
+        }
+        const filtered = products.filter((product) => {
+            if (
+                product.name.toLowerCase().includes(searchQuery.toLowerCase())
+            ) {
+                return product;
+            }
+        });
+        setCurrnetPage(1);
+        setNewProducts(filtered);
+    }, [searchQuery, products]);
+
     // reset scroll to top
     window.scrollTo(0, 0);
 
@@ -79,6 +97,13 @@ function Products() {
     return (
         <div className="mt-5">
             <div className="container-fluid">
+                {/* search input */}
+                <div className="d-flex justify-content-center my-4">
+                    <Search
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
+                </div>
                 <div className="row gy-5 ">
                     {/* side bar filter */}
                     <div className="col-lg-2 ">
