@@ -11,7 +11,7 @@ function Products() {
     const [newProducts, setNewProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrnetPage] = useState(1);
-    const [postsPerPage] = useState(8);
+    const [postsPerPage] = useState(12);
     const [filter, setFilter] = useState({
         category: {
             consoles: false,
@@ -54,7 +54,18 @@ function Products() {
             filter.category.accessories === false
         ) {
             setCurrnetPage(1);
-            return setNewProducts(filtered);
+
+            const filteredSearch = filtered.filter((product) => {
+                if (
+                    product.name
+                        .toLowerCase()
+                        .startsWith(searchQuery.toLowerCase())
+                ) {
+                    return product;
+                }
+            });
+
+            return setNewProducts(filteredSearch);
         }
         const filteredProducts = filtered.filter((product) => {
             if (
@@ -67,24 +78,17 @@ function Products() {
             }
         });
         setCurrnetPage(1);
-        setNewProducts(filteredProducts);
-    }, [filter, products]);
 
-    // filter products based on search query
-    useEffect(() => {
-        if (searchQuery === '') {
-            return setNewProducts(products);
-        }
-        const filtered = products.filter((product) => {
+        const filteredSearch = filteredProducts.filter((product) => {
             if (
-                product.name.toLowerCase().includes(searchQuery.toLowerCase())
+                product.name.toLowerCase().startsWith(searchQuery.toLowerCase())
             ) {
                 return product;
             }
         });
-        setCurrnetPage(1);
-        setNewProducts(filtered);
-    }, [searchQuery, products]);
+
+        setNewProducts(filteredSearch);
+    }, [filter, products, searchQuery]);
 
     // reset scroll to top
     window.scrollTo(0, 0);
