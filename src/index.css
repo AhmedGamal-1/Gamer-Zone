@@ -7,9 +7,11 @@
 }
 :root {
     --main-font: 'Poppins', sans-serif;
-    --main-color: #ff4136;
+    --main-color: #06131d;
+    --sec-color: #ff4136;
 }
 body {
+    background: var(--main-color);
     font-family: var(--main-font);
 }
 .container-fluid {
