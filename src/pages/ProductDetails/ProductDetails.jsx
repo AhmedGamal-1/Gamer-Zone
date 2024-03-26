@@ -3,12 +3,11 @@ import SingleProduct from '../../components/SingleProduct/SingleProduct';
 
 function ProductDetails() {
     const { id } = useParams();
-     return (
+    return (
         <>
             <SingleProduct id={id}></SingleProduct>
         </>
     );
-
 }
 
 export default ProductDetails;
