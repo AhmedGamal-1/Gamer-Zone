@@ -7,8 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products/Products';
 import Paypal from './components/Payment/Paypal';
 import { FavoritesProvider } from './context/FavoritesContext';
-// import { useState } from 'react';
-// import Checkout from './components/Payment/Paypal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
