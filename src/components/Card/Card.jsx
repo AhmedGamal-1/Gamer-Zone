@@ -10,9 +10,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Card.css';
 import { Box } from '@mui/material';
 import { useFavorites } from '../../context/FavoritesContext';
+import { Link } from 'react-router-dom';
 
 export default function ProductCard({ product }) {
-    const { favorites, toggleFavorite, isFavorite } = useFavorites();
+    const { toggleFavorite, isFavorite } = useFavorites();
     const fav = isFavorite(product.id);
 
     const handleToggle = () => {
@@ -49,13 +50,15 @@ export default function ProductCard({ product }) {
                     />
                 </IconButton>
             )}
-            <CardMedia
-                sx={{ borderRadius: '10px', objectFit: 'cover' }}
-                component="img"
-                alt="green iguana"
-                height="320"
-                image={`/images/${product.poster}`}
-            />
+            <Link style={{ textDecoration: 'none' }} to={`/${product.id}`}>
+                <CardMedia
+                    sx={{ borderRadius: '10px', objectFit: 'cover' }}
+                    component="img"
+                    alt="green iguana"
+                    height="320"
+                    image={`/images/${product.poster}`}
+                />{' '}
+            </Link>
             <Box
                 className="p-2 card-content"
                 sx={{
@@ -65,26 +68,29 @@ export default function ProductCard({ product }) {
                     height: 'calc(100% - 320px)',
                 }}
             >
-                <CardContent
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="p"
-                        color="white"
-                        fontSize="0.9rem"
-                        textAlign="center"
-                        lineHeight="1.5rem"
-                        sx={{}}
+                <Link style={{ textDecoration: 'none' }} to={`/${product.id}`}>
+                    <CardContent
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
                     >
-                        {product.name}
-                    </Typography>
-                </CardContent>
+                        <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="p"
+                            color="white"
+                            fontSize="0.9rem"
+                            textAlign="center"
+                            lineHeight="1.5rem"
+                            sx={{}}
+                        >
+                            {product.name}
+                        </Typography>
+                    </CardContent>
+                </Link>
+
                 <CardActions
                     sx={{
                         display: 'flex',

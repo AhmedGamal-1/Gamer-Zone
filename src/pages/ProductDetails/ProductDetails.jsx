@@ -8,6 +8,7 @@ function ProductDetails() {
             <SingleProduct id={id}></SingleProduct>
         </>
     );
+
 }
 
 export default ProductDetails;
