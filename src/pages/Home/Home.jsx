@@ -1,9 +1,11 @@
 import ProductCard from '../../components/Card/Card';
 import { useEffect, useState } from 'react';
 import Axios from 'axios';
+import homeStyle from '../Home/Home.module.css';
 import Loading from '../../components/Loading/Loading';
 import landingImage1 from '../../assets/images/landing1.1.png';
-import homeStyle from '../Home/Home.module.css';
+import headSet from '../../assets/images/headset1.png';
+import mouse from '../../assets/images/mouse1.png';
 
 function Home() {
     let [product, setProducts] = useState([]);
@@ -71,9 +73,10 @@ function Home() {
             </div>
             {/* End landing-image section */}
 
-            <div className="container my-5">
+            {/* Start Console Product section */}
+            <div className="container" style={{ marginTop: '100px' }}>
                 <div className="text-content mb-4">
-                    <h4>Gaming Consoles Collection</h4>
+                    <h4 className="fw-bold">Gaming Consoles Collection</h4>
                     <p style={{ color: '#ff4136' }}>
                         The Best in Gaming Consoles
                     </p>
@@ -102,10 +105,12 @@ function Home() {
                     </button>
                 </div>
             </div>
+            {/* End Console Product section */}
 
+            {/* Start Accessory section */}
             <div className="container my-5">
                 <div className="text-content mb-4">
-                    <h4>Accessory Favorites</h4>
+                    <h4 className="fw-bold">Accessory Favorites</h4>
                     <p style={{ color: '#ff4136' }}>
                         Level Up Your Setup with Our Favorite Accessories
                     </p>
@@ -134,11 +139,15 @@ function Home() {
                     </button>
                 </div>
             </div>
+            {/* End Accessory section */}
+
+            {/* Start Game Section */}
 
             <div className="container my-5">
                 <div className="text-content mb-4">
-                    <h4>Games</h4>
+                    <h4 className="fw-bold">Games</h4>
                 </div>
+
                 <div className="row justify-content-center align-item-center text-center">
                     {product.length > 0 ? (
                         product.slice(14, 18).map((product, index) => (
@@ -163,10 +172,39 @@ function Home() {
                     </button>
                 </div>
             </div>
+            {/* End Game Section */}
 
-            {/* Start Console Product section */}
-
-            {/* End Console Product section */}
+            {/* Start Keyboard, Mouse And Headsets Section */}
+            <div className="container">
+                <div className="text-content mb-5">
+                    <h4 className="fw-bold">Keyboard, Mouse And Headsets</h4>
+                </div>
+                <div className="row mb-5">
+                    <div className="col-md-6">
+                        <div
+                            className="left-category-image position-relative"
+                            style={{ width: '400px', border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                            <div className="image">
+                                <img className="w-100" src={mouse} alt="" />
+                            </div>
+                            <div className={homeStyle.overLay}>
+                              <h5 className='d-flex justify-content-center mt-4'>Keyboard, Mouse</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="right-category-image position-relative" style={{ width: '400px', marginLeft: "auto", border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                            <div className="image">
+                                <img className='w-100' src={headSet} alt="" />
+                            </div>
+                            <div className={homeStyle.overLay}>
+                              <h5 className='d-flex justify-content-center mt-4'>HeadSets</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* End Keyboard, Mouse And Headsets Section */}
         </>
     );
 }
