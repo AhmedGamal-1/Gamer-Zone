@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Joi from 'joi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setLogin } from '../../Redux/store/LoginSlice/LoginSlice';
 function Login() {
     //Redux
@@ -39,12 +39,12 @@ function Login() {
                     body: JSON.stringify(LoginForm),
                 }
             );
-
             const data = await response.json();
             if (data.message == 'success') {
-                navigator('/');
                 setLoading(false);
+                localStorage.setItem('userToken', data.token);
                 dispatch(setLogin());
+                navigator('/');
             } else {
                 data.message == 'fail'
                     ? setLoginError(data.errors.msg)
