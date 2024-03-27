@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Joi from 'joi';
 import { useSelector } from 'react-redux';
 function Login() {
-    //State Mangment Using Redux
-    const isLogged = useSelector((state) => console.log(state.isLogged));
     //State Mangment Using State
     const [isLoading, setLoading] = useState(false);
     const [errorList, setErrorList] = useState([]);
@@ -40,11 +38,13 @@ function Login() {
             );
 
             const data = await response.json();
-            if (response.ok) {
-                localStorage.setItem('userToken', data.token);
+            if (data.message == 'success') {
                 navigator('/');
+                setLoading(false);
             } else {
-                setLoginError(data.message || 'Registration failed');
+                data.message == 'fail'
+                    ? setLoginError(data.errors.msg)
+                    : setLoginError(data.message);
                 setLoading(false);
             }
         } catch (error) {
