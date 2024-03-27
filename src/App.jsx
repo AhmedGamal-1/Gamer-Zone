@@ -10,6 +10,8 @@ import { FavoritesProvider } from './context/FavoritesContext';
 import { CartProvider } from './context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './pages/Cart/Cart';
+import Profile from './pages/Profile/Profile';
+import Error from './pages/Error/Error';
 
 function App() {
     return (
@@ -28,6 +30,8 @@ function App() {
                         <Route path="/favorites" element={<Favorites />} />
                         <Route path="/checkout" element={<Paypal />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/*" element={<Error />} />
                     </Routes>
                 </FavoritesProvider>
             </CartProvider>
