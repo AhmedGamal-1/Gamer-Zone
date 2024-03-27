@@ -9,15 +9,21 @@ import Products from './pages/Products/Products';
 import Login from './pages/Login/Login';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { logOut } from './Redux/store/LoginSlice/LoginSlice';
+import { setLogin, logOut } from './Redux/store/LoginSlice/LoginSlice';
+import { useEffect } from 'react';
 function App() {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     // const userData = useSelector((state) => state.isLogged);
     // const handleCick = function () {
     //     dispatch(logOut());
     //     navigate('/login');
     // };
+    useEffect(() => {
+        if (localStorage.getItem('userToken') !== null) {
+            dispatch(setLogin());
+        }
+    }, []);
     return (
         <>
             {/* {userData ? (
