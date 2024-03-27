@@ -18,3 +18,47 @@
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
+
+.linkStyle {
+  text-decoration: none;
+}
+.showButton {
+  background: none;
+  outline: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.showButton span {
+  margin-right: 10px;
+}
+
+.showButton:hover {
+  border-color: #ff4136;
+}
+
+.showButton:hover i {
+  animation: arrowMoving 1s infinite;
+}
+
+.CategoryImage:hover {
+  transition: 0.2s;
+  transform: translateY(-1px);
+}
+
+
+
+
+
+
+
+@keyframes arrowMoving {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}

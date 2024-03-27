@@ -6,6 +6,7 @@ import Loading from '../../components/Loading/Loading';
 import landingImage1 from '../../assets/images/landing1.1.png';
 import headSet from '../../assets/images/headset1.png';
 import mouse from '../../assets/images/mouse1.png';
+import { Link } from 'react-router-dom';
 
 function Home() {
     let [product, setProducts] = useState([]);
@@ -24,16 +25,16 @@ function Home() {
         <>
             {/* Start landing-image section */}
             <div className="landing-image">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
                         <div className={homeStyle.bigImage}>
                             <img
                                 src={landingImage1}
-                                class="d-block w-100"
+                                className="d-block w-100"
                                 alt="..."
                             />
                         </div>
-                        <div class="carousel-caption text-white d-flex justify-content-between mb-5">
+                        <div className="carousel-caption text-white d-flex justify-content-between mb-5">
                             <div className="left-content">
                                 <h5
                                     style={{
@@ -43,21 +44,21 @@ function Home() {
                                 >
                                     Chrono Odyssey
                                 </h5>
-                                <div class="d-grid gap-2 d-md-block mt-3">
+                                <div className="d-grid gap-2 d-md-block mt-3">
                                     <div
-                                        class="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
+                                        className="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
                                         style={{ width: '110px' }}
                                     >
                                         Multiplayer
                                     </div>
                                     <div
-                                        class="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
+                                        className="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
                                         style={{ width: '110px' }}
                                     >
                                         Massively
                                     </div>
                                     <div
-                                        class="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
+                                        className="p-1 bg-secondary text-white rounded-1 d-inline-block mx-1"
                                         style={{ width: '110px' }}
                                     >
                                         Beat em Up
@@ -88,7 +89,9 @@ function Home() {
                                 key={index}
                                 className="col-md-6 col-lg-3 col-sm-12 product-card"
                             >
-                                <ProductCard product={product} />
+                              <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
+                                <ProductCard product={product}/>
+                              </Link>{' '}
                             </div>
                         ))
                     ) : (
@@ -99,10 +102,12 @@ function Home() {
                 </div>
 
                 <div className="showButton my-5 text-center">
-                    <button className="btn btn-outline-danger px-3 py-2">
-                        <span>Show More</span>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    <Link to = '/products' className={homeStyle.linkStyle}> {''}
+                      <button className={`${homeStyle.showButton} px-3 py-2`}>
+                          <span>Show More</span>
+                          <i className="fa-solid fa-arrow-right-long text-white"></i>
+                      </button>
+                    </Link>{' '}
                 </div>
             </div>
             {/* End Console Product section */}
@@ -122,7 +127,9 @@ function Home() {
                                 key={index}
                                 className="col-md-6 col-lg-3 col-sm-12 product-card"
                             >
-                                <ProductCard product={product} />
+                              <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
+                                <ProductCard product={product}/>
+                              </Link>{' '}
                             </div>
                         ))
                     ) : (
@@ -133,10 +140,12 @@ function Home() {
                 </div>
 
                 <div className="showButton my-5 text-center">
-                    <button className="btn btn-outline-danger px-3 py-2">
-                        <span>Show More</span>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    <Link to = '/products' className={homeStyle.linkStyle}> {''}
+                      <button className={`${homeStyle.showButton} px-3 py-2`}>
+                          <span>Show More</span>
+                          <i className="fa-solid fa-arrow-right-long text-white"></i>
+                      </button>
+                    </Link>{' '}
                 </div>
             </div>
             {/* End Accessory section */}
@@ -155,7 +164,9 @@ function Home() {
                                 key={index}
                                 className="col-md-6 col-lg-3 col-sm-12 product-card"
                             >
-                                <ProductCard product={product} />
+                              <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
+                                <ProductCard product={product}/>
+                              </Link>{' '}
                             </div>
                         ))
                     ) : (
@@ -166,10 +177,12 @@ function Home() {
                 </div>
 
                 <div className="showButton my-5 text-center">
-                    <button className="btn btn-outline-danger px-3 py-2">
-                        <span>Show More</span>
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    <Link to = '/products' className={homeStyle.linkStyle}> {''}
+                      <button className={`${homeStyle.showButton} px-3 py-2`}>
+                          <span>Show More</span>
+                          <i className="fa-solid fa-arrow-right-long text-white"></i>
+                      </button>
+                    </Link>{' '}
                 </div>
             </div>
             {/* End Game Section */}
@@ -181,50 +194,36 @@ function Home() {
                 </div>
                 <div className="row mb-5">
                     <div className="col-md-6">
-                        <div
-                            className="left-category-image position-relative"
+                        <div className={`${homeStyle.CategoryImage} position-relative`}
                             style={{ width: '400px', border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                          <Link to = '/products' className={homeStyle.linkStyle}> {''}
                             <div className="image">
                                 <img className="w-100" src={mouse} alt="" />
                             </div>
                             <div className={homeStyle.overLay}>
-                              <h5 className='d-flex justify-content-center mt-4'>Keyboard, Mouse</h5>
+                              <h5 className='d-flex justify-content-center mt-4 text-white'>Keyboard, Mouse</h5>
                             </div>
+                          </Link>{' '}
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="right-category-image position-relative" style={{ width: '400px', marginLeft: "auto", border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                        <div className={`${homeStyle.CategoryImage} position-relative`} style={{ width: '400px', marginLeft: "auto", border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                          <Link to = '/products' className={homeStyle.linkStyle}> {''}
                             <div className="image">
                                 <img className='w-100' src={headSet} alt="" />
                             </div>
                             <div className={homeStyle.overLay}>
-                              <h5 className='d-flex justify-content-center mt-4'>HeadSets</h5>
+                              <h5 className='d-flex justify-content-center mt-4 text-white'>HeadSets</h5>
                             </div>
+                          </Link>{' '}
                         </div>
                     </div>
                 </div>
             </div>
             {/* End Keyboard, Mouse And Headsets Section */}
+            
         </>
     );
 }
 
 export default Home;
-
-// <div className="continer-fluid">
-//                 <div className="image">
-//                     <img src={landingImage} alt="..." />
-//                 </div>
-//             </div>
-//             <div>hi</div>
-// <div className="row justify-content-center align-item-center text-center">
-//     {product.length > 0 ?product.map((product, index)=> <div key={index} className="col-md-3">
-//         {/* <div className="product">
-//         <h6 className="fw-bold">{product.name}</h6>
-//         <img className="w-100 border" src={product.image} alt="" />
-//         <p>{product.description}</p>
-//         </div> */}
-//         <ProductCard
-//             product={product} />
-//     </div>):<Loading/>}
-// </div>
