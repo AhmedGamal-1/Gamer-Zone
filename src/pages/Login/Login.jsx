@@ -1,8 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Joi from 'joi';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLogin } from '../../Redux/store/LoginSlice/LoginSlice';
 function Login() {
+    //Redux
+    const dispatch = useDispatch();
     //State Mangment Using State
     const [isLoading, setLoading] = useState(false);
     const [errorList, setErrorList] = useState([]);
@@ -41,6 +44,7 @@ function Login() {
             if (data.message == 'success') {
                 navigator('/');
                 setLoading(false);
+                dispatch(setLogin());
             } else {
                 data.message == 'fail'
                     ? setLoginError(data.errors.msg)
@@ -85,7 +89,7 @@ function Login() {
         <>
             <form onSubmit={handleSubmition}>
                 <div>
-                    <label htmlFor="email">User Email</label>
+                    <label htmlFor="email">Email</label>
                     <input
                         type="text"
                         id="email"
