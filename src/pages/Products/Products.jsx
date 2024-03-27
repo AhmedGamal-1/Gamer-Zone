@@ -4,6 +4,7 @@ import './Products.css';
 import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
+import { Link } from 'react-router-dom';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -11,6 +12,7 @@ function Products() {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrnetPage] = useState(1);
     const [postsPerPage] = useState(8);
+
     const [filter, setFilter] = useState({
         category: {
             consoles: false,
