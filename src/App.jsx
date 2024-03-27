@@ -6,6 +6,8 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Favorites from './pages/Favorites/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products/Products';
+import Login from './pages/Login/Login';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
     return (
@@ -15,6 +17,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
     );
 }

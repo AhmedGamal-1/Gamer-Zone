@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import registerSlice from '../store/registerSlice/registerSlice';
+// import registerSlice from '../store/registerSlice/registerSlice';
 
 const store = configureStore({
     reducer: {
-        register: registerSlice,
+        // register: registerSlice,
     },
 });
 
