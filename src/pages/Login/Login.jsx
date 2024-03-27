@@ -1,30 +1,31 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Joi from 'joi';
+import { useSelector } from 'react-redux';
 function Login() {
-    //State Mangment
+    //State Mangment Using Redux
+    const isLogged = useSelector((state) => console.log(state.isLogged));
+    //State Mangment Using State
     const [isLoading, setLoading] = useState(false);
-    const [error, setError] = useState('');
     const [errorList, setErrorList] = useState([]);
-    const [LoginForm, setLoginForm] = useState({
-        email: '',
-        password: '',
-    });
+    const [LoginForm, setLoginForm] = useState({ email: '', password: '' });
     const [LoginError, setLoginError] = useState('');
+    //Use Ref
     const inputRef = useRef(null);
-
+    //Use Effcet
     useEffect(() => {
         inputRef.current.focus();
     }, []);
     //programmatic Routing
     const navigator = useNavigate();
     //Functions
+    //Get Form Data
     const GetUserLoginForm = function (e) {
         const regData = { ...LoginForm };
         regData[e.target.name] = e.target.value;
         setLoginForm(regData);
     };
-
+    //Post Data
     const PostLoginData = async function () {
         try {
             const response = await fetch(
@@ -43,14 +44,15 @@ function Login() {
                 localStorage.setItem('userToken', data.token);
                 navigator('/');
             } else {
-                setError(data.message || 'Registration failed');
+                setLoginError(data.message || 'Registration failed');
                 setLoading(false);
             }
         } catch (error) {
-            setError('Registration failed due to an error');
+            setLoginError('Registration failed due to an error');
             setLoading(false);
         }
     };
+    //Validation Form
     const validateLoginForm = function () {
         const scheme = Joi.object({
             email: Joi.string().email({
@@ -60,6 +62,7 @@ function Login() {
         });
         return scheme.validate(LoginForm, { abortEarly: false });
     };
+    //Handle Submit
     const handleSubmition = function (e) {
         e.preventDefault();
         setLoginError('');
@@ -72,6 +75,7 @@ function Login() {
             PostLoginData();
         }
     };
+    //Handle Validator
     const IputValidator = function (inputName) {
         return errorList.filter((error) => {
             return error.context.label === inputName;
@@ -106,7 +110,7 @@ function Login() {
                     />
                 </div>
                 {errorList.length > 0 && IputValidator('password') ? (
-                    <div>invalid Password</div>
+                    <div>invalid Email or Password</div>
                 ) : (
                     ''
                 )}
@@ -118,7 +122,7 @@ function Login() {
                     )}
                 </button>
             </form>
-            <div>{error}</div>
+            <div>{LoginError}</div>
         </>
     );
 }
