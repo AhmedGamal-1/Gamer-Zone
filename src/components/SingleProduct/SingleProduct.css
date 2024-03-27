@@ -1,8 +1,9 @@
-.singleProductGames .myCard {
-    margin-bottom: 90px;
+.singleProductGames,
+.singleProductConsoles {
+    margin-bottom: 30px;
 }
 .singleProductGames .myCard .img {
-    min-height: 100vh;
+    min-height: 85vh;
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -15,7 +16,7 @@
 }
 
 .content {
-    padding: 120px 0;
+    padding: 90px 0;
 }
 .content .name {
     font-size: 2rem;
