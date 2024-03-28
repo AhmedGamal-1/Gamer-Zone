@@ -1,15 +1,15 @@
 import './App.css';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import Favorites from './pages/Favorites/Favorites';
+import Favorites from '../src/pages/Favorites/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './pages/Products/Products';
 import Login from './pages/Login/Login';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { setLogin, logOut } from './Redux/store/LoginSlice/LoginSlice';
+import { useDispatch } from 'react-redux';
+import { setLogin } from './Redux/store/LoginSlice/LoginSlice';
 import { useEffect } from 'react';
 function App() {
     // const navigate = useNavigate();
@@ -26,7 +26,8 @@ function App() {
     }, []);
     return (
         <>
-            {/* {userData ? (
+            {/* <NavBar />
+            {userData ? (
                 <div>Hey {userData.name}</div>
             ) : (
                 <div>You are not logged</div>
