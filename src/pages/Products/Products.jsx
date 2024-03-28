@@ -1,40 +1,140 @@
 import { useEffect, useState } from 'react';
 import ProductCard from '../../components/Card/Card';
 import './Products.css';
+import Loading from '../../components/Loading/Loading';
+import PaginationControlled from '../../components/Pagination/PaginationControlled';
+import Filter from '../../components/Filter/Filter';
 
 function Products() {
     const [products, setProducts] = useState([]);
+    const [newProducts, setNewProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrnetPage] = useState(1);
+    const [postsPerPage] = useState(8);
+    const [filter, setFilter] = useState({
+        category: {
+            consoles: false,
+            games: false,
+            accessories: false,
+        },
+
+        price: {
+            min: 0,
+            max: 100000,
+        },
+    });
+
+    // fetch all products
     useEffect(() => {
         const fetchProducts = async () => {
-            const response = await fetch('http://localhost:3000/products');
+            const response = await fetch('http://localhost:2024/products');
             const data = await response.json();
             setProducts(data);
+            setLoading(false);
         };
         fetchProducts();
     }, []);
+
+    // filter products based on category and price
+    useEffect(() => {
+        const filtered = products.filter((product) => {
+            if (
+                product.price >= filter.price.min &&
+                product.price <= filter.price.max
+            ) {
+                return product;
+            }
+        });
+
+        if (
+            filter.category.consoles === false &&
+            filter.category.games === false &&
+            filter.category.accessories === false
+        ) {
+            setCurrnetPage(1);
+            return setNewProducts(filtered);
+        }
+        const filteredProducts = filtered.filter((product) => {
+            if (
+                (filter.category.consoles && product.category === 'consoles') ||
+                (filter.category.games && product.category === 'games') ||
+                (filter.category.accessories &&
+                    product.category === 'accessories')
+            ) {
+                return product;
+            }
+        });
+        setCurrnetPage(1);
+        setNewProducts(filteredProducts);
+    }, [filter, products]);
+
+    // reset scroll to top
+    window.scrollTo(0, 0);
+
+    // pagination
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentPosts = newProducts.slice(firstPostIndex, lastPostIndex);
 
     return (
         <div className="mt-5">
             <div className="container-fluid">
                 <div className="row gy-5 ">
-                    <div className="col-lg-2 sidebar text-light">
-                        <div className="bg-light text-black ">sidebar</div>
+                    {/* side bar filter */}
+                    <div className="col-lg-2 ">
+                        <div className="sidebar">
+                            <Filter setFilter={setFilter} />
+                        </div>
                     </div>
-                    <div className="col-lg-10">
+
+                    {/* products */}
+
+                    <div className="col-lg-10 products">
                         <div className="row gy-5 ">
-                            {products &&
-                                products.map((product) => {
+                            {/* Loading spinner */}
+                            {loading && (
+                                <div className="d-flex justify-content-center align-items-center p-5 loading">
+                                    <Loading />
+                                </div>
+                            )}
+
+                            {/* No products found */}
+                            {!loading && currentPosts.length === 0 && (
+                                <div className="d-flex justify-content-center align-items-center p-5 no-products">
+                                    <h1>No Products Found</h1>
+                                </div>
+                            )}
+
+                            {/* Display products */}
+                            {currentPosts &&
+                                currentPosts.map((product) => {
                                     return (
                                         <div
                                             key={product.id}
-                                            className="col-md-4 col-lg-4 col-xl-3 col-sm-6"
+                                            className="col-md-4 col-lg-4 col-xl-3 col-sm-6 product-card"
                                         >
-                                            <ProductCard product={product} />
+                                            <Link
+                                                to={`/products/${product.id}`}
+                                            >
+                                                {' '}
+                                                <ProductCard
+                                                    product={product}
+                                                />
+                                            </Link>{' '}
                                         </div>
                                     );
                                 })}
                         </div>
                     </div>
+                </div>
+                {/* pagination */}
+                <div className="pagination-container my-3 ">
+                    <PaginationControlled
+                        totalPosts={newProducts.length}
+                        postsPerPage={postsPerPage}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrnetPage}
+                    />
                 </div>
             </div>
         </div>
