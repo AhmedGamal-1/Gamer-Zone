@@ -5,12 +5,15 @@ import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
 
+import Search from '../../components/Search/Search';
+
 function Products() {
     const [products, setProducts] = useState([]);
     const [newProducts, setNewProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrnetPage] = useState(1);
-    const [postsPerPage] = useState(8);
+
+    const [postsPerPage] = useState(12);
     const [filter, setFilter] = useState({
         category: {
             consoles: false,
@@ -23,6 +26,8 @@ function Products() {
             max: 100000,
         },
     });
+
+    const [searchQuery, setSearchQuery] = useState('');
 
     // fetch all products
     useEffect(() => {
@@ -52,7 +57,19 @@ function Products() {
             filter.category.accessories === false
         ) {
             setCurrnetPage(1);
-            return setNewProducts(filtered);
+
+
+            const filteredSearch = filtered.filter((product) => {
+                if (
+                    product.name
+                        .toLowerCase()
+                        .startsWith(searchQuery.toLowerCase())
+                ) {
+                    return product;
+                }
+            });
+
+            return setNewProducts(filteredSearch);
         }
         const filteredProducts = filtered.filter((product) => {
             if (
@@ -65,8 +82,18 @@ function Products() {
             }
         });
         setCurrnetPage(1);
-        setNewProducts(filteredProducts);
-    }, [filter, products]);
+
+
+        const filteredSearch = filteredProducts.filter((product) => {
+            if (
+                product.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+            ) {
+                return product;
+            }
+        });
+
+        setNewProducts(filteredSearch);
+    }, [filter, products, searchQuery]);
 
     // reset scroll to top
     window.scrollTo(0, 0);
@@ -79,6 +106,13 @@ function Products() {
     return (
         <div className="mt-5">
             <div className="container-fluid">
+                {/* search input */}
+                <div className="d-flex justify-content-center my-4">
+                    <Search
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                    />
+                </div>
                 <div className="row gy-5 ">
                     {/* side bar filter */}
                     <div className="col-lg-2 ">

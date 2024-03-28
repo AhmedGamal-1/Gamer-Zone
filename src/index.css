@@ -6,10 +6,6 @@
     list-style: none;
 }
 
-body {
-    background: var(--main-color);
-    font-family: var(--main-font);
-}
 
 :root {
     /*  Palette */
@@ -17,15 +13,18 @@ body {
     --color-var2: #1e2a33;
     --color-var3: #2c2e30;
     --color-var4: #ff4136;
-    --color-var5: #1e2a33;
     --text-color: #c6c6c6;
 }
-body {
-    font-family: 'Poppins', 'Montserrat', sans-serif;
-}
+
 html {
     scroll-behavior: smooth;
 }
+
+
+body {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+}
+
 
 .container-fluid {
     max-width: 1400px;

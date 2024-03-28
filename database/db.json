@@ -9,6 +9,7 @@
             "image": "ps5-wallpaper.jpg",
             "category": "consoles",
             "rating": 4.5,
+            "video": "eECNpQ67JRo",
             "recommendation": [{}]
         },
         {
@@ -17,9 +18,10 @@
             "price": 39999.0,
             "description": "Experience cutting-edge gaming with the PlayStation 5 Slim Console. This sleek powerhouse boasts 1TB SSD storage, ultra-high-speed SSD for instant load times, and 4K-TV gaming at up to 120fps. Immerse yourself in realism with ray tracing and Tempest 3D AudioTech. The DualSense controller's haptic feedback and adaptive triggers enhance gameplay. Backwards compatibility lets you enjoy over 4,000 PS4 games. All that and more at the best price.",
             "poster": "ps5.jpg",
-            "image": "ps5-wallpaper.jpg",
+            "image": "ps5-wallpaper.webp",
             "category": "consoles",
             "rating": 4.5,
+            "video": "1BU4VXofbQk",
             "recommendation": [{}]
         },
         {
@@ -28,8 +30,9 @@
             "price": 35999.0,
             "description": "The PS5 Digital Edition unleashes new gaming possibilities that you never anticipated. Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games. PS5 Digital Edition is an all-digital version of the PS5 console with no disc drive",
             "poster": "ps5.jpg",
-            "image": "ps5-wallpaper.jpg",
+            "image": "ps5-wallpaper.webp",
             "rating": 4.9,
+            "video": "RkC0l4iekYo",
             "category": "consoles",
             "recommendation": [{}]
         },
@@ -43,6 +46,7 @@
             "image": "ps4-wallpaper.jpg",
             "category": "consoles",
             "rating": 4.5,
+            "video": "Hme5BhT52_U",
             "recommendation": [{}]
         },
         {
@@ -54,6 +58,7 @@
             "image": "ps4-wallpaper.jpg",
             "category": "consoles",
             "rating": 4.8,
+            "video": "Hme5BhT52_U",
             "recommendation": [{}]
         },
         {
@@ -62,9 +67,10 @@
             "price": 11499.0,
             "description": "PlayStation 4 Console slim 500GB -White -Used A Stunning New Design : A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
             "poster": "ps4.jpg",
-            "image": "ps4-white-wallpaper.jpg",
+            "image": "ps4-white-wallpaper.webp",
             "category": "consoles",
             "rating": 4.5,
+            "video": "T_zBs5mzt_c",
             "recommendation": [{}]
         },
         {
@@ -73,9 +79,10 @@
             "price": 12999.0,
             "description": "PlayStation 4 Console slim 1TB - USED A Stunning New Design : A slimmer and lighter console with stylish new looks and packed with true PlayStation 4 - PS4 power.",
             "poster": "ps4-camouflage.jpg",
-            "image": "ps4-camouflage-wallpaper.jpg",
+            "image": "ps4-camouflage-wallpaper.webp",
             "category": "consoles",
             "rating": 4.5,
+            "video": "bZI5nRZycOI",
             "recommendation": [{}]
         },
         {
@@ -87,6 +94,7 @@
             "image": "ps4-spiderman-wallpaper.jpg",
             "category": "consoles",
             "rating": 4.5,
+            "video": "0esF2qT8Cec",
             "recommendation": [{}]
         },
         {
@@ -95,9 +103,10 @@
             "price": 8999.0,
             "description": "Immerse yourself in the extraordinary world of gaming with the PlayStation 4 Console Fat 500GB - Batman Limited Edition. Unleash the power of exclusive games, from indie gems to blockbuster hits. Experience endless entertainment at your fingertips and stay connected with friends through innovative features. Elevate your gaming journey at the best price!",
             "poster": "ps4-batman.jpg",
-            "image": "ps4-batman-wallpaper.jpg",
+            "image": "ps4-batman-wallpaper.webp",
             "category": "consoles",
             "rating": 4.5,
+            "video": "B3268QgAYUk",
             "recommendation": [{}]
         },
         {
@@ -108,6 +117,7 @@
             "poster": "ps5-controller.jpg",
             "image": "ps5-controller-wallpaper.jpg",
             "category": "accessories",
+            "video": "KAvwl27SnvA",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -119,6 +129,7 @@
             "poster": "ps5-controller-black.jpg",
             "image": "ps5-controller-black-wallpaper.jpg",
             "category": "accessories",
+            "video": "FvLK66CFRH4",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -128,8 +139,9 @@
             "price": 4399.0,
             "description": "Cosmic red PlayStation 5 DualSense wireless controller for PS5 Explore new gaming frontiers with a vivid red design, complete with matching button details.",
             "poster": "ps5-controller-cosmicRed.jpg",
-            "image": "ps5-controller-cosmicRed-wallpaper.jpg",
+            "image": "ps5-controller-cosmicRed-wallpaper.webp",
             "category": "accessories",
+            "video": "FvLK66CFRH4",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -141,6 +153,7 @@
             "poster": "ps5-controller-cosmicRed.jpg",
             "image": "ps5-controller-cosmicRed-wallpaper.jpg",
             "category": "accessories",
+            "video": "FvLK66CFRH4",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -152,6 +165,7 @@
             "poster": "spiderman-ps5-game.jpg",
             "image": "spiderman-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "h_t1-SbVcVs",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -163,6 +177,7 @@
             "poster": "god-of-war-ps5-game.jpg",
             "image": "god-of-war-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "hfJ4Km46A-0",
             "rating": 4.5,
             "recommendation": [{}]
         },
@@ -174,6 +189,7 @@
             "poster": "the-legend-of-zelda-ps5-game.jpg",
             "image": "the-legend-of-zelda-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "zw47_q9wbBE",
             "rating": 4.8,
             "recommendation": [{}]
         },
@@ -185,6 +201,7 @@
             "poster": "red-dead-redemption-2-ps5-game.jpg",
             "image": "red-dead-redemption-2-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "gmA6MrX81z4",
             "rating": 4.7,
             "recommendation": [{}]
         },
@@ -196,6 +213,7 @@
             "poster": "TheWitcher3-ps5-game.jpg",
             "image": "TheWitcher3-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "c0i88t0Kacs",
             "rating": 4.8,
             "recommendation": {}
         },
@@ -207,6 +225,7 @@
             "poster": "uncharted-ps5-game.jpg",
             "image": "uncharted-ps5-game-wallpaper.jpg",
             "category": "games",
+            "video": "hh5HV4iic1Y",
             "rating": 4.7,
             "recommendation": {}
         }
