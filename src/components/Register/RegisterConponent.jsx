@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Joi from 'joi';
-function Register() {
+import './RegisterConponent.css';
+import { Link } from 'react-router-dom';
+function RegisterConponent() {
     //State Mangment
     const [isLoading, setLoading] = useState(false);
     const [errorList, setErrorList] = useState([]);
@@ -14,12 +16,12 @@ function Register() {
     });
     const [registerError, setRegisterError] = useState('');
     const inputRef = useRef(null);
+    const navigator = useNavigate();
 
     useEffect(() => {
         inputRef.current.focus();
     }, []);
     //programmatic Routing
-    const navigator = useNavigate();
     //Functions
     const GetUserRegisterForm = function (e) {
         const regData = { ...RegisterForm };
@@ -86,7 +88,7 @@ function Register() {
     };
     return (
         <>
-            <form onSubmit={handleSubmition}>
+            <form onSubmit={handleSubmition} className="register-form">
                 <div>
                     <label htmlFor="name">User Name</label>
                     <input
@@ -95,6 +97,7 @@ function Register() {
                         name="name"
                         onChange={GetUserRegisterForm}
                         ref={inputRef}
+                        placeholder="Please Write Your Name"
                     />
                 </div>
 
@@ -110,6 +113,7 @@ function Register() {
                         id="email"
                         name="email"
                         onChange={GetUserRegisterForm}
+                        placeholder="Please Write Your Email"
                     />
                 </div>
                 {errorList.length > 0 && IputValidator('email') ? (
@@ -124,6 +128,7 @@ function Register() {
                         id="password"
                         name="password"
                         onChange={GetUserRegisterForm}
+                        placeholder="Please Write Your Password"
                     />
                 </div>
                 {errorList.length > 0 && IputValidator('password') ? (
@@ -138,6 +143,7 @@ function Register() {
                         id="rePassword"
                         name="rePassword"
                         onChange={GetUserRegisterForm}
+                        placeholder="Please Re-enter Your Password"
                     />
                 </div>
                 {errorList.length > 0 && IputValidator('rePassword') ? (
@@ -152,6 +158,7 @@ function Register() {
                         id="phone"
                         name="phone"
                         onChange={GetUserRegisterForm}
+                        placeholder="Please enter Your Phone"
                     />
                 </div>
                 {errorList.length > 0 && IputValidator('phone') ? (
@@ -160,16 +167,21 @@ function Register() {
                     ''
                 )}
                 {registerError && <div>{registerError}</div>}
-                <button>
+                <button className="register-btn">
                     {isLoading ? (
                         <i className="fa-solid fa-gamepad fa-beat"></i>
                     ) : (
-                        'Register'
+                        'Create Account'
                     )}
                 </button>
+
+                <div className="account">
+                    Already have a account? <Link to="/login">Log In</Link>
+                </div>
+                <div className="or">-OR-</div>
             </form>
         </>
     );
 }
 
-export default Register;
+export default RegisterConponent;

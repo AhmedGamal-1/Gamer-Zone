@@ -5,10 +5,7 @@
     padding: 0;
     list-style: none;
 }
-
-
 :root {
-    /*  Palette */
     --color-var1: #15181d;
     --color-var2: #1e2a33;
     --color-var3: #2c2e30;
@@ -19,12 +16,30 @@
 html {
     scroll-behavior: smooth;
 }
-
-
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--color-var1);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-var4);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #f6271c;
+}
+input:-webkit-autofill {
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
+}
+::selection {
+    background-color: var(--color-var4);
+}
 body {
+    background-color: var(--color-var1);
     font-family: 'Poppins', 'Montserrat', sans-serif;
 }
-
 
 .container-fluid {
     max-width: 1400px;
