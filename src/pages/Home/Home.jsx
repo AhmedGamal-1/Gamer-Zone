@@ -7,6 +7,7 @@ import landingImage1 from '../../assets/images/landing1.1.png';
 import headSet from '../../assets/images/headset1.png';
 import mouse from '../../assets/images/mouse1.png';
 import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 
 function Home() {
     let [product, setProducts] = useState([]);
@@ -222,6 +223,9 @@ function Home() {
             </div>
             {/* End Keyboard, Mouse And Headsets Section */}
             
+            {/* Start Footer */}
+            <Footer />
+            {/* End Footer */}
         </>
     );
 }
