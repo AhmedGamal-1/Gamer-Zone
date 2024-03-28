@@ -58,7 +58,6 @@ function Products() {
         ) {
             setCurrnetPage(1);
 
-
             const filteredSearch = filtered.filter((product) => {
                 if (
                     product.name
@@ -82,7 +81,6 @@ function Products() {
             }
         });
         setCurrnetPage(1);
-
 
         const filteredSearch = filteredProducts.filter((product) => {
             if (
@@ -147,14 +145,7 @@ function Products() {
                                             key={product.id}
                                             className="col-md-4 col-lg-4 col-xl-3 col-sm-6 product-card"
                                         >
-                                            <Link
-                                                to={`/products/${product.id}`}
-                                            >
-                                                {' '}
-                                                <ProductCard
-                                                    product={product}
-                                                />
-                                            </Link>{' '}
+                                            <ProductCard product={product} />
                                         </div>
                                     );
                                 })}

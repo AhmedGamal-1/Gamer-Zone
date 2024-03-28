@@ -13,16 +13,14 @@ import Cart from './pages/Cart/Cart';
 import Profile from './pages/Profile/Profile';
 import Error from './pages/Error/Error';
 
-import Login from './pages/Login/Login';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import { useDispatch } from 'react-redux';
-import { setLogin } from './Redux/store/LoginSlice/LoginSlice';
+import { setLogin } from './redux/store/LoginSlice/LoginSlice';
 import { useEffect } from 'react';
-import { FavoritesProvider } from './context/FavoritesContext';
 
 function App() {
     const dispatch = useDispatch();
- 
+
     useEffect(() => {
         if (localStorage.getItem('userToken') !== null) {
             dispatch(setLogin());
@@ -30,16 +28,10 @@ function App() {
     }, []);
     return (
         <>
-
-
-      
-
             <CartProvider>
                 <FavoritesProvider>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        {/* <Route path="/signup" element={<signup} /> */}
-                        {/* <Route path="/signin" element={}/> */}
                         <Route path="/products" element={<Products />} />
                         <Route
                             path="/products/:id"
@@ -53,7 +45,6 @@ function App() {
                     </Routes>
                 </FavoritesProvider>
             </CartProvider>
-
         </>
     );
 }
