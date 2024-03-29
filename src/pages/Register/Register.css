@@ -1,0 +1,36 @@
+.register-holder {
+    display: flex;
+    gap: 6rem;
+    height: 100vh;
+}
+.register-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.register-image :nth-child(2) {
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+h2 {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--color-var4);
+    text-transform: uppercase;
+}
+.account {
+    color: white;
+}
+.account a {
+    text-decoration: none;
+    color: var(--color-var4);
+}
+@media (max-width: 767px) {
+    .register-holder {
+        justify-content: center;
+    }
+    .register-image {
+        display: none;
+    }
+}

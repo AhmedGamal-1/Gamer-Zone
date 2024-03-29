@@ -4,6 +4,7 @@ import './Products.css';
 import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
+
 import Search from '../../components/Search/Search';
 
 function Products() {
@@ -11,6 +12,7 @@ function Products() {
     const [newProducts, setNewProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrnetPage] = useState(1);
+
     const [postsPerPage] = useState(12);
     const [filter, setFilter] = useState({
         category: {
@@ -24,6 +26,7 @@ function Products() {
             max: 100000,
         },
     });
+
     const [searchQuery, setSearchQuery] = useState('');
 
     // fetch all products

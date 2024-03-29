@@ -12,12 +12,24 @@ import { Box } from '@mui/material';
 import { useFavorites } from '../../context/FavoritesContext';
 import { Link } from 'react-router-dom';
 
+
+
+import { useCart } from '../../context/CartContext';
+
 export default function ProductCard({ product }) {
     const { toggleFavorite, isFavorite } = useFavorites();
+    const { addToCart } = useCart();
+
     const fav = isFavorite(product.id);
 
     const handleToggle = () => {
         toggleFavorite(product);
+
+
+    };
+    const handleAddCart = (el) => {
+        addToCart(el);
+
     };
 
     return (
@@ -50,6 +62,7 @@ export default function ProductCard({ product }) {
                     />
                 </IconButton>
             )}
+
             <Link
                 style={{ textDecoration: 'none' }}
                 to={`/products/${product.id}`}
@@ -60,7 +73,10 @@ export default function ProductCard({ product }) {
                     alt="green iguana"
                     height="320"
                     image={`/images/${product.poster}`}
+
+
                 />
+
             </Link>
             <Box
                 className="p-2 card-content"
@@ -115,7 +131,11 @@ export default function ProductCard({ product }) {
                     >
                         {product.price} EGP
                     </Typography>
-                    <IconButton>
+                    <IconButton
+                        onClick={() => {
+                            handleAddCart(product);
+                        }}
+                    >
                         <ShoppingCartOutlinedIcon
                             className="add-to-cart-btn"
                             sx={{
