@@ -10,6 +10,7 @@ function Login() {
                 <img src="/public/images/Overlay.png" alt="overlay" />
             </div>
             <div className="login">
+                <h3 className="welcome">Welcome</h3>
                 <LoginComponent />
                 <div className="authentication-btn">
                     <GoogleLoginBtn />

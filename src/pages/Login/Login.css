@@ -29,3 +29,12 @@ h2 {
         display: none;
     }
 }
+@media (max-width: 480px) {
+    .login-holder {
+        margin-top: 40%;
+        height: 0;
+    }
+    .login {
+        align-self: normal;
+    }
+}

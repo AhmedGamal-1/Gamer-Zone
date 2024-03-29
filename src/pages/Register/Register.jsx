@@ -10,7 +10,7 @@ export default function Register() {
                 <img src="/public/images/Overlay.png" alt="overlay" />
             </div>
             <div className="register">
-                <h3>Welcome</h3>
+                <h3 className="welcome">Welcome</h3>
                 <RegisterComponent />
                 <div className="or">-OR-</div>
                 <div className="authentication-btn">
