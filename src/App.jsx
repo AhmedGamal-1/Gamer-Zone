@@ -4,9 +4,16 @@ import Home from './pages/Home/Home';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Favorites from '../src/pages/Favorites/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min';
 import Products from './pages/Products/Products';
 import Paypal from './components/Payment/Paypal';
 import { FavoritesProvider } from './context/FavoritesContext';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import Store from '../src/redux/store/Store';
+
+
 import { CartProvider } from './context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cart from './pages/Cart/Cart';
@@ -18,6 +25,7 @@ import { setLogin } from './redux/store/LoginSlice/LoginSlice';
 import { useEffect } from 'react';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+
 function App() {
     const dispatch = useDispatch();
 
@@ -27,16 +35,34 @@ function App() {
         }
     }, []);
     return (
+
+        <div>
+            <Provider store={Store}>
+                <FavoritesProvider>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/signup" element={<signup></signup>} />
+                        <Route path="/signin" element={<signIn></signIn>} />
+
         <>
             <CartProvider>
                 <FavoritesProvider>
                     <Routes>
                         <Route path="/" element={<Home />} />
+
                         <Route path="/products" element={<Products />} />
                         <Route
                             path="/products/:id"
                             element={<ProductDetails />}
                         />
+
+                        <Route path="/favorites" element={<Favorites />} />
+                        <Route path="/checkout/:id" element={<Paypal />} />
+                    </Routes>
+                </FavoritesProvider>
+            </Provider>
+        </div>
+
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/favorites" element={<Favorites />} />
@@ -48,6 +74,7 @@ function App() {
                 </FavoritesProvider>
             </CartProvider>
         </>
+
     );
 }
 
