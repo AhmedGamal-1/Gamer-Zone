@@ -1,3 +1,4 @@
+import FacebookLoginBtn from '../../components/FacebookLoginBtn/FacebookLoginBtn';
 import GoogleLoginBtn from '../../components/GoogleLoginBtn/GoogleLoginBtn';
 import RegisterComponent from '../../components/Register/RegisterConponent';
 import './Register.css';
@@ -11,7 +12,10 @@ export default function Register() {
             <div className="register">
                 <h2>Welcome</h2>
                 <RegisterComponent />
-                <GoogleLoginBtn />
+                <div className="authentication-btn">
+                    <GoogleLoginBtn />
+                    <FacebookLoginBtn />
+                </div>
             </div>
         </div>
     );

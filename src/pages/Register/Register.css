@@ -26,6 +26,12 @@ h2 {
     text-decoration: none;
     color: var(--color-var4);
 }
+.authentication-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
 @media (max-width: 767px) {
     .register-holder {
         justify-content: center;

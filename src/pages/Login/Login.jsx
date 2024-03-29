@@ -1,5 +1,6 @@
 import LoginComponent from '../../components/Login/LoginComponent';
 import GoogleLoginBtn from '../../components/GoogleLoginBtn/GoogleLoginBtn';
+import FacebookLoginBtn from '../../components/FacebookLoginBtn/FacebookLoginBtn';
 import './Login.css';
 function Login() {
     return (
@@ -10,7 +11,10 @@ function Login() {
             </div>
             <div className="login">
                 <LoginComponent />
-                <GoogleLoginBtn />
+                <div className="authentication-btn">
+                    <GoogleLoginBtn />
+                    <FacebookLoginBtn />
+                </div>
             </div>
         </div>
     );
