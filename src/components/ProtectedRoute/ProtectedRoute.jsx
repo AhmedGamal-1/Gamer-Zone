@@ -1,10 +1,10 @@
 import { Navigate } from 'react-router-dom';
 
-function ProtectedRoute({ childern }) {
+function ProtectedRoute({ children }) {
     if (!localStorage.getItem('userToken')) {
         return <Navigate to="/login" />;
     } else {
-        return childern;
+        return children;
     }
 }
 

@@ -6,7 +6,8 @@ import { useFavorites } from '../../context/FavoritesContext';
 import { BallTriangle } from 'react-loader-spinner';
 import './ProductDetails.css';
 function ProductDetails() {
-    const { id } = useParams();
+    let { id } = useParams();
+    // id = Number(id);
 
     const [item, setItem] = useState();
     const [fav, setFav] = useState();

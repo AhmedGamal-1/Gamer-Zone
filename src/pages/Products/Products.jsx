@@ -6,7 +6,7 @@ import PaginationControlled from '../../components/Pagination/PaginationControll
 import Filter from '../../components/Filter/Filter';
 
 import Search from '../../components/Search/Search';
-
+import { Link } from 'react-router-dom';
 function Products() {
     const [products, setProducts] = useState([]);
     const [newProducts, setNewProducts] = useState([]);
@@ -103,6 +103,7 @@ function Products() {
 
     return (
         <div className="mt-5">
+            <Link to="/cart">Cart</Link>
             <div className="container-fluid">
                 {/* search input */}
                 <div className="d-flex justify-content-center my-4">
