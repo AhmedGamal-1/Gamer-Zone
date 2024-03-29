@@ -12,9 +12,3 @@
     padding: 1rem;
     border-radius: 6px;
 }
-
-@media (max-width: 767px) {
-    input {
-        width: 300px;
-    }
-}

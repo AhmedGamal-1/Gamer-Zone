@@ -178,7 +178,6 @@ function RegisterConponent() {
                 <div className="account">
                     Already have a account? <Link to="/login">Log In</Link>
                 </div>
-                <div className="or">-OR-</div>
             </form>
         </>
     );
