@@ -2,12 +2,33 @@ import React from 'react'
 import FooterStyle from '../Footer/Footer.module.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo1.png';
-
+import { useRef } from 'react';
+// import emailjs from '@emailjs/browser';
+import emailjs from 'emailjs-com';
 
 export default function Footer() {
-  function handleClick() {
-    window.location.href = 'mailto:your.email@example.com';
+
+  const form = useRef();
+  console.log(form.current);
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_6i9dfk7', 'template_fgajqk8', form.current,'692mJ7z8uyaWM4n1o')
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+
+
   };
+
   return (
     <>
       <div className="super-parent position-relative">
@@ -15,16 +36,16 @@ export default function Footer() {
           <div className={`container-fluid`} style={{maxWidth:"none"}}>
             <div className="row">
               <div className={`col-md-4 fw-bold text-white z-3 ${FooterStyle.leftSide}`}>
-                  <form action="" className={`mt-5`}>
+                  <form action="" className={`mt-5`} ref={form}>
                     <div className="header text-center" style={{color:"#ff4136", fontSize:"30px"}}>Get in touch</div>
                     <div className="d-flex flex-column form-box col-lg-10 mx-3 mt-3 p-3">
                       <input type="text" name="name" placeholder="Name" style={{caretColor:"#eee", color:"#eee", padding:"10px", marginBottom:"15px", background:"none", outline:"none", borderBottom:"1px solid #eee", borderTop:"none", borderLeft:"none", borderRight:"none"}}/>
                       <input type="email" name="email" placeholder="Email" style={{caretColor:"#eee", color:"#eee", padding:"10px", marginBottom:"15px", background:"none", outline:"none", borderBottom:"1px solid #eee", borderTop:"none", borderLeft:"none", borderRight:"none"}}/>
                       <textarea name="message" placeholder="Content" style={{caretColor:"#eee", color:"#eee", padding:"10px", height:"100px",marginBottom:"15px", background:"none", outline:"none", borderBottom:"1px solid #eee", borderTop:"none", borderLeft:"none", borderRight:"none"}}></textarea>
                       <div className="cheack d-flex">
-                        <input id="terms" type="checkbox"/> <label for="terms" style={{fontSize:"12px", fontWeight:"normal", color:"#ccc", marginLeft:"5px"}}>I would like to receive the newsletter.</label>
+                        <input id="terms" type="checkbox"/> <label htmlFor="terms" style={{fontSize:"12px", fontWeight:"normal", color:"#ccc", marginLeft:"5px"}}>I would like to receive the newsletter.</label>
                       </div>
-                      <button type='submit' className={`${FooterStyle.submitButton} px-3 py-2`} onClick={handleClick}>
+                      <button type='submit' className={`${FooterStyle.submitButton} px-3 py-2`} onClick={sendEmail}>
                           <span>Submit</span>
                           <i className="fa-solid fa-arrow-right-long text-white"></i>
                       </button>
@@ -67,44 +88,3 @@ export default function Footer() {
     </>
   )
 }
-
-
-
-{/* <form action="" className='form mb-sm-3 mb-lg-0 col-sm-12 col-lg-6'>
-                  <div class="form-box col-lg-10 mx-3 mt-3 p-3">
-                    <div class="header-text text-center text-sm-start">Get In Touch</div>
-                    <input name="name" placeholder="Name" type="text" />
-                    <input name="email" placeholder="Email" type="email" />
-                    <textarea name="message" placeholder="Content" ></textarea>
-                    <input id="terms" type="checkbox" /> <label for="terms"></label>
-                    <span class="fw-bold">I would like to receive the newsletter.</span>
-                    <button class="btn-primary mt-5" type="submit">Submit</button>
-                  </div>
-                </form>
-
-
-<div class="footer d-flex flex-column justify-content-center align-items-center col-sm-12 col-lg-5" >
-                <div class="fw-bold footer-heading-one text-center">
-                  WE ARE READY TO GIVE YOU THE BEST DINNING EXPERIENCE.
-                </div>
-                <div class="d-flex flex-column flex-lg-row address-holder footer-heading-two ms-2" >
-                  <div class="d-flex align-items-center">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p class="mb-2 mb-xl-0">
-                      Masr ElGdeda, Street Sheraton Elmatar , 35222
-                    </p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-center">
-                    <i class="fa-solid fa-phone"></i>
-                    <p class="mb-0">Call us: +01063403215</p>
-                  </div>
-                </div>
-                <div class="mt-5 logo-holder">
-                  <img src="./assets/images/logo.png" alt="" />
-                </div>
-                <div class="all-social-holder d-flex justify-content-center gap-2">
-                  <div class="facebook social-holder">facebook</div>
-                  <div class="twitter social-holder">twitter</div>
-                  <div class="instagram social-holder">instagram</div>
-                </div>
-              </div> */}
