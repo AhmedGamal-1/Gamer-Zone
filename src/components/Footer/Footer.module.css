@@ -59,6 +59,23 @@
 }
 
 
+@media (max-width: 767px) {
+  .headTitle {
+    font-size: 20px !important;
+    margin-top: 30px !important;
+  }
+  .addressSmall {
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+  }
+  .smallAdd {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
 
 @keyframes arrowMoving {
   0%, 100% {

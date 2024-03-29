@@ -25,9 +25,9 @@ function Home() {
     return (
         <>
             {/* Start landing-image section */}
-            <div className="landing-image">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
+            <div className="landing-image position-relative">
+                <div className="carousel-inner ">
+                    <div className="carousel-item active ">
                         <div className={homeStyle.bigImage}>
                             <img
                                 src={landingImage1}
@@ -35,8 +35,8 @@ function Home() {
                                 alt="..."
                             />
                         </div>
-                        <div className="carousel-caption text-white d-flex justify-content-between mb-5">
-                            <div className="left-content">
+                        <div className={`${homeStyle.flexText}  carousel-caption text-white d-flex justify-content-between mb-5`}>
+                            <div className={`${homeStyle.leftContent}`}>
                                 <h5
                                     style={{
                                         fontSize: '40px',
@@ -77,7 +77,7 @@ function Home() {
 
             {/* Start Console Product section */}
             <div className="container" style={{ marginTop: '100px' }}>
-                <div className="text-content mb-4">
+                <div className={`${homeStyle.textContent} mb-4`}>
                     <h4 className="fw-bold">Gaming Consoles Collection</h4>
                     <p style={{ color: '#ff4136' }}>
                         The Best in Gaming Consoles
@@ -88,7 +88,7 @@ function Home() {
                         product.slice(0, 4).map((product, index) => (
                             <div
                                 key={index}
-                                className="col-md-6 col-lg-3 col-sm-12 product-card"
+                                className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}
                             >
                               <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
                                 <ProductCard product={product}/>
@@ -115,7 +115,7 @@ function Home() {
 
             {/* Start Accessory section */}
             <div className="container my-5">
-                <div className="text-content mb-4">
+                <div className={`${homeStyle.textContent} mb-4`}>
                     <h4 className="fw-bold">Accessory Favorites</h4>
                     <p style={{ color: '#ff4136' }}>
                         Level Up Your Setup with Our Favorite Accessories
@@ -126,7 +126,7 @@ function Home() {
                         product.slice(10, 14).map((product, index) => (
                             <div
                                 key={index}
-                                className="col-md-6 col-lg-3 col-sm-12 product-card"
+                                className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}
                             >
                               <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
                                 <ProductCard product={product}/>
@@ -155,7 +155,7 @@ function Home() {
 
             <div className="container my-5">
                 <div className="text-content mb-4">
-                    <h4 className="fw-bold">Games</h4>
+                    <h4 className={`${homeStyle.textContent} fw-bold`}>Games</h4>
                 </div>
 
                 <div className="row justify-content-center align-item-center text-center">
@@ -163,8 +163,7 @@ function Home() {
                         product.slice(14, 18).map((product, index) => (
                             <div
                                 key={index}
-                                className="col-md-6 col-lg-3 col-sm-12 product-card"
-                            >
+                                className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}>
                               <Link to={`/products/${product.id}`} className={homeStyle.linkStyle}> {' '}
                                 <ProductCard product={product}/>
                               </Link>{' '}
@@ -190,12 +189,12 @@ function Home() {
 
             {/* Start Keyboard, Mouse And Headsets Section */}
             <div className="container">
-                <div className="text-content mb-5">
-                    <h4 className="fw-bold">Keyboard, Mouse And Headsets</h4>
+                <div className={`mb-5 `}>
+                    <h4 className={`${homeStyle.textContent} fw-bold`}>Keyboard, Mouse And Headsets</h4>
                 </div>
                 <div className="row mb-5">
                     <div className="col-md-6">
-                        <div className={`${homeStyle.CategoryImage} position-relative`}
+                        <div className={`${homeStyle.CategoryImage} ${homeStyle.mediaCategory} position-relative`}
                             style={{ width: '400px', border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
                           <Link to = '/products' className={homeStyle.linkStyle}> {''}
                             <div className="image">
@@ -208,7 +207,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className={`${homeStyle.CategoryImage} position-relative`} style={{ width: '400px', marginLeft: "auto", border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
+                        <div className={`${homeStyle.CategoryImage} ${homeStyle.mediaCategory} position-relative`} style={{ width: '400px', marginLeft: "auto", border:"1px solid #ff4136", borderTopLeftRadius:"10px", borderTopRightRadius:"10px" }}>
                           <Link to = '/products' className={homeStyle.linkStyle}> {''}
                             <div className="image">
                                 <img className='w-100' src={headSet} alt="" />

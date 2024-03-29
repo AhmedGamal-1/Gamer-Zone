@@ -33,17 +33,17 @@ export default function Footer() {
               </div>
               <div className="col-md-8 fw-bold text-white z-3 d-flex justify-content-center align-items-center">
                 <div className="main-content" style={{width:"75%"}}>
-                  <div className="head-title" style={{width:"50%",fontSize:"35px", fontWeight:"bold", margin:"0 auto 20px", textAlign:"center"}}>
+                  <div className={FooterStyle.headTitle} style={{width:"50%",fontSize:"35px", fontWeight:"bold", margin:"0 auto 20px", textAlign:"center"}}>
                     WE ARE READY TO GIVE YOU THE BEST <span style={{color:"#ff4136"}}>Entertainment</span>.</div>
                   <div  style={{width:"100%", margin:"auto"}}>
-                    <div className="address d-flex justify-content-between mt-5">
-                      <div className="d-flex">
+                    <div className={`address d-flex justify-content-between mt-5 ${FooterStyle.addressSmall}`}>
+                      <div className={`d-flex ${FooterStyle.smallAdd}`}>
                         <i className="fa-solid fa-location-dot" style={{color:"#ff4136", marginRight:"10px", fontSize:"25px"}}></i>
                         <p className="">
                           Masr ElGdeda, Street Sheraton Elmatar , 35222
                         </p>
                       </div>
-                      <div className="d-flex">
+                      <div className={`d-flex ${FooterStyle.smallAdd}`}>
                         <i className="fa-solid fa-phone" style={{color:"#ff4136", marginRight:"10px", fontSize:"25px"}}></i>
                         <p className="">Call us: +01063403215</p>
                       </div>
