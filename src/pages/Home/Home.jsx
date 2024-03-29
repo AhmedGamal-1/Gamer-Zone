@@ -8,6 +8,7 @@ import headSet from '../../assets/images/headset1.png';
 import mouse from '../../assets/images/mouse1.png';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Home() {
     let [product, setProducts] = useState([]);
@@ -24,6 +25,7 @@ function Home() {
 
     return (
         <>
+            <Navbar />
             {/* Start landing-image section */}
             <div className="landing-image position-relative">
                 <div className="carousel-inner ">

@@ -1,3 +1,20 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4136;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1121;
+}
+
+
 .bigImage::after {
     content: '';
     position: absolute;

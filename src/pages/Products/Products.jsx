@@ -5,6 +5,7 @@ import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
 import { Link } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -79,62 +80,66 @@ function Products() {
     const currentPosts = newProducts.slice(firstPostIndex, lastPostIndex);
 
     return (
-        <div className="mt-5">
-            <div className="container-fluid">
-                <div className="row gy-5 ">
-                    {/* side bar filter */}
-                    <div className="col-lg-2 ">
-                        <div className="sidebar">
-                            <Filter setFilter={setFilter} />
+        <>
+            <Navbar />
+            <div className="mt-5">
+                <div className="container-fluid">
+                    <div className="row gy-5 ">
+                        {/* side bar filter */}
+                        <div className="col-lg-2 ">
+                            <div className="sidebar">
+                                <Filter setFilter={setFilter} />
+                            </div>
+                        </div>
+
+                        {/* products */}
+
+                        <div className="col-lg-10 products">
+                            <div className="row gy-5 ">
+                                {/* Loading spinner */}
+                                {loading && (
+                                    <div className="d-flex justify-content-center align-items-center p-5 loading">
+                                        <Loading />
+                                    </div>
+                                )}
+
+                                {/* No products found */}
+                                {!loading && currentPosts.length === 0 && (
+                                    <div className="d-flex justify-content-center align-items-center p-5 no-products">
+                                        <h1>No Products Found</h1>
+                                    </div>
+                                )}
+
+                                {/* Display products */}
+                                {currentPosts &&
+                                    currentPosts.map((product) => {
+                                        return (
+                                            <div
+                                                key={product.id}
+                                                className="col-md-4 col-lg-4 col-xl-3 col-sm-6 product-card"
+                                            >
+                                                <Link to={`/products/${product.id}`}> {' '}
+                                                    <ProductCard product={product}/>
+                                                </Link>{' '}
+                                            </div>
+                                        );
+                                    })}
+                            </div>
                         </div>
                     </div>
-
-                    {/* products */}
-
-                    <div className="col-lg-10 products">
-                        <div className="row gy-5 ">
-                            {/* Loading spinner */}
-                            {loading && (
-                                <div className="d-flex justify-content-center align-items-center p-5 loading">
-                                    <Loading />
-                                </div>
-                            )}
-
-                            {/* No products found */}
-                            {!loading && currentPosts.length === 0 && (
-                                <div className="d-flex justify-content-center align-items-center p-5 no-products">
-                                    <h1>No Products Found</h1>
-                                </div>
-                            )}
-
-                            {/* Display products */}
-                            {currentPosts &&
-                                currentPosts.map((product) => {
-                                    return (
-                                        <div
-                                            key={product.id}
-                                            className="col-md-4 col-lg-4 col-xl-3 col-sm-6 product-card"
-                                        >
-                                            <Link to={`/products/${product.id}`}> {' '}
-                                                <ProductCard product={product}/>
-                                            </Link>{' '}
-                                        </div>
-                                    );
-                                })}
-                        </div>
+                    {/* pagination */}
+                    <div className="pagination-container my-3 ">
+                        <PaginationControlled
+                            totalPosts={newProducts.length}
+                            postsPerPage={postsPerPage}
+                            currentPage={currentPage}
+                            setCurrentPage={setCurrnetPage}
+                        />
                     </div>
-                </div>
-                {/* pagination */}
-                <div className="pagination-container my-3 ">
-                    <PaginationControlled
-                        totalPosts={newProducts.length}
-                        postsPerPage={postsPerPage}
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrnetPage}
-                    />
                 </div>
             </div>
-        </div>
+        
+        </>
     );
 }
 

@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn/SignIn';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Favorites from './pages/Favorites/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap'
 import '@fortawesome/fontawesome-free/css/all.css';
 import Products from './pages/Products/Products';
 import { FavoritesProvider } from './context/FavoritesContext';
