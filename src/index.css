@@ -17,6 +17,11 @@
 html {
     scroll-behavior: smooth;
 }
+
+.active::before {
+    transform-origin: left !important;
+    transform: scaleX(1) !important;
+}
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -40,6 +45,7 @@ input:-webkit-autofill {
 body {
     background-color: var(--color-var1);
     font-family: 'Poppins', 'Montserrat', sans-serif;
+    color: white;
 }
 
 .container-fluid {

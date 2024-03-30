@@ -75,8 +75,8 @@ const Navbar = () => {
                         >
                             <li className="nav-item">
                                 <NavLink
-                                    activeClassName="activeLink"
-                                    className={`${navbarStyle.navText} nav-link text-light`}
+                                    className={`${navbarStyle.navText} nav-link `}
+                                    exact
                                     to="/"
                                 >
                                     Home
@@ -84,8 +84,8 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <NavLink
-                                    activeClassName="activeLink"
-                                    className={`${navbarStyle.navText} nav-link text-light`}
+                                    activeClassName={navbarStyle.activeLink}
+                                    className={`${navbarStyle.navText} nav-link `}
                                     to="/products"
                                 >
                                     Products

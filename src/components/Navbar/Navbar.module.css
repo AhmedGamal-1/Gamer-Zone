@@ -7,9 +7,10 @@
     position: relative;
     text-decoration: none;
 }
-.activeLink {
-    color: red !important;
+.navText {
+    color: white;
 }
+
 .navText::before {
     content: '';
     position: absolute;

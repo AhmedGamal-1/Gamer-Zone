@@ -7,7 +7,6 @@ import emailjs from 'emailjs-com';
 
 export default function Footer() {
     const form = useRef();
-    console.log(form.current);
 
     const sendEmail = (e) => {
         e.preventDefault();
