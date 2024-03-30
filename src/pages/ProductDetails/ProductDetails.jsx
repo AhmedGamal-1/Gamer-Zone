@@ -5,17 +5,21 @@ import { useEffect, useState } from 'react';
 import { useFavorites } from '../../context/FavoritesContext';
 import { BallTriangle } from 'react-loader-spinner';
 import './ProductDetails.css';
+import ProductCard from './../../components/Card/Card';
 function ProductDetails() {
     let { id } = useParams();
     const [item, setItem] = useState();
     const [fav, setFav] = useState();
     const [catg, setCatg] = useState();
     const { isFavorite } = useFavorites();
+    const [products, setProducts] = useState();
+
     useEffect(() => {
         axios
             .get('http://localhost:2024/products')
             .then((res) => {
                 const foundItem = res.data.find((el) => el.id === id);
+                setProducts(res.data);
                 setItem(foundItem);
                 setFav(isFavorite(foundItem?.id));
                 setCatg(foundItem?.category);
@@ -24,7 +28,7 @@ function ProductDetails() {
                 console.error('Error fetching products:', error);
             });
     }, [id, isFavorite, catg]);
-
+    window.scrollTo(0, 0);
     if (!item)
         return (
             <BallTriangle
@@ -61,6 +65,18 @@ function ProductDetails() {
                 ></iframe>
 
                 <div className="titleProduct">You may also like </div>
+                <div className="row gy-5 mb-5">
+                    {products
+                        .filter((game) => game.category !== item.category)
+                        .map((game) => (
+                            <div key={game.id} className="col-3">
+                                <div style={{ textDecoration: 'none' }}>
+                                    <ProductCard product={game}></ProductCard>
+                                </div>
+                            </div>
+                        ))
+                        .slice(0, 4)}
+                </div>
             </div>
         </>
     );
