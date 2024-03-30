@@ -10,10 +10,9 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 export default function SingleProduct({ item, fav }) {
     const { toggleFavorite } = useFavorites();
-    const { cart, addToCart } = useCart();
+    const { addToCart } = useCart();
     const isLogged = useSelector((state) => state.isLogged);
-    //Handle Log In
-    // const handle
+
     //fav toggle
     const handleToggle = () => {
         toggleFavorite(item);

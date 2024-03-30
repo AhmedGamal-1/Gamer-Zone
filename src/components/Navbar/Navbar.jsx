@@ -4,14 +4,26 @@ import logo from '../../assets/images/logo1.png';
 import navbarStyle from '../Navbar/Navbar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../redux/store/LoginSlice/LoginSlice';
-import { func } from 'joi';
+import { Badge, Button, Menu, MenuItem } from '@mui/material';
+import { useEffect, useState } from 'react';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useCart } from '../../context/CartContext';
+
 const Navbar = () => {
     const location = useLocation();
     const isLogged = useSelector((state) => state.isLogged);
     const dispatch = useDispatch();
-    // const handleLogOut=function(){
-    //   dis
-    // }
+    const { cart } = useCart();
+    const [badge, setBadge] = useState(0);
+
+    useEffect(() => {
+        const totalItemsInCart = cart.reduce(
+            (total, item) => total + item.counter,
+            0
+        );
+        setBadge(totalItemsInCart);
+    }, [cart]);
+
     const handleContactClick = () => {
         if (location.pathname === '/') {
             scroll.scrollToBottom();
@@ -20,6 +32,15 @@ const Navbar = () => {
             window.location.href = '/';
             scroll.scrollToBottom();
         }
+    };
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
     };
 
     return (
@@ -83,44 +104,102 @@ const Navbar = () => {
                             </li>
                         </ul>
 
-                        <div className="cart-shop ms-4">
-                            <i
-                                className="fa-solid fa-cart-shopping"
-                                style={{ color: 'white', marginRight: '30px' }}
-                            ></i>
-                        </div>
+                        <div className={navbarStyle.rightSide}>
+                            {' '}
+                            <Link to={'/cart'}>
+                                {' '}
+                                <Badge
+                                    badgeContent={badge ? badge : '0'}
+                                    className={navbarStyle.cart}
+                                    sx={{
+                                        '& .MuiBadge-badge': {
+                                            backgroundColor: '#ff4136',
+                                            color: 'white',
+                                        },
+                                    }}
+                                >
+                                    <ShoppingCartOutlinedIcon
+                                        sx={{
+                                            color: '#fff',
+                                            width: '30px',
+                                            height: '30px',
+                                        }}
+                                    />
+                                </Badge>
+                            </Link>
+                            {isLogged ? (
+                                <>
+                                    <div className={navbarStyle.avatar}>
+                                        <Button
+                                            id="basic-button"
+                                            aria-controls={
+                                                open ? 'basic-menu' : undefined
+                                            }
+                                            aria-haspopup="true"
+                                            aria-expanded={
+                                                open ? 'true' : undefined
+                                            }
+                                            onClick={handleClick}
+                                        >
+                                            <img
+                                                src="/images/profile.png"
+                                                width="40px"
+                                                height="40px"
+                                            ></img>
+                                        </Button>
+                                        <Menu
+                                            id="basic-menu"
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            onClose={handleClose}
+                                            MenuListProps={{
+                                                'aria-labelledby':
+                                                    'basic-button',
+                                            }}
+                                        >
+                                            <Link
+                                                to={'/profile'}
+                                                onClick={handleClose}
+                                                className={navbarStyle.myLink}
+                                            >
+                                                <MenuItem>Profile</MenuItem>
+                                            </Link>
 
-                        {isLogged ? (
-                            <div
-                                className={`${navbarStyle.signButton} ms-3`}
-                                onClick={() => dispatch(logOut())}
-                            >
-                                <button className="btn btn-danger me-2">
-                                    SignOut
-                                </button>
-                            </div>
-                        ) : (
-                            <>
-                                <Link to="/login">
-                                    <div
-                                        className={`${navbarStyle.signButton}`}
-                                    >
-                                        <button className="btn btn-danger me-2">
-                                            Login
-                                        </button>
+                                            <MenuItem onClick={handleClose}>
+                                                <div
+                                                    onClick={() =>
+                                                        dispatch(logOut())
+                                                    }
+                                                >
+                                                    SignOut
+                                                </div>
+                                            </MenuItem>
+                                        </Menu>
                                     </div>
-                                </Link>
-                                <Link to="/register">
-                                    <div
-                                        className={`${navbarStyle.signButton} ms-3`}
-                                    >
-                                        <button className="btn btn-danger me-2">
-                                            Register
-                                        </button>
-                                    </div>
-                                </Link>
-                            </>
-                        )}
+                                </>
+                            ) : (
+                                <>
+                                    <Link to="/login">
+                                        <div
+                                            className={`${navbarStyle.signButton}`}
+                                        >
+                                            <button className="btn btn-danger me-2">
+                                                Login
+                                            </button>
+                                        </div>
+                                    </Link>
+                                    <Link to="/register">
+                                        <div
+                                            className={`${navbarStyle.signButton} ms-3`}
+                                        >
+                                            <button className="btn btn-danger me-2">
+                                                Register
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             </nav>

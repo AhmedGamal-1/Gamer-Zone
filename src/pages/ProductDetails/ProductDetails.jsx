@@ -54,7 +54,7 @@ function ProductDetails() {
                     width="560"
                     height="315"
                     className="video"
-                    src={`https://www.youtube.com/embed/${item.video}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${item.video}`}
                     title="YouTube Video Player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

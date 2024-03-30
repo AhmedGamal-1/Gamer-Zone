@@ -1,26 +1,41 @@
 .navText {
-  font-size: 16px;
-  margin-right: 20px;
+    font-size: 16px;
+    margin-right: 20px;
 }
 
 .signButton button {
-  background-color: #ff4136;
-  outline: none;
-  border: none;
-  color: white;
+    background-color: #ff4136;
+    outline: none;
+    border: none;
+    color: white;
 }
 
 @media (max-width: 992px) {
-  .signButton {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-  .signButton button {
-    font-size: 13px !important;
-  }
-  .smallMedia {
-    /* text-align: center; */
-    margin-left: 2% !important;
-    margin-top: 20px;
-  }
+    .signButton {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .signButton button {
+        font-size: 13px !important;
+    }
+    .smallMedia {
+        /* text-align: center; */
+        margin-left: 2% !important;
+        margin-top: 20px;
+    }
+}
+.rightSide {
+    display: flex;
+    align-items: center;
+}
+.myLink {
+    color: black !important;
+}
+.avatar img {
+    filter: invert(86%) sepia(100%) saturate(0%) hue-rotate(127deg)
+        brightness(103%) contrast(104%);
+}
+.cart {
+    margin-inline-end: 30px;
+    margin-top: 5px;
 }
