@@ -10,6 +10,12 @@ function Login() {
                 <img src="/public/images/Overlay.png" alt="overlay" />
             </div>
             <div className="login">
+                <img
+                    src="../src/assets/images/logo1.png"
+                    width="150px"
+                    height="50px"
+                    className="authLogo"
+                ></img>
                 <h3 className="welcome">Welcome</h3>
                 <LoginComponent />
                 <div className="authentication-btn">
