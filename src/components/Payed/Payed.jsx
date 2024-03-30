@@ -1,27 +1,40 @@
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import Products from '../../pages/Products/Products';
-import NewNav from '../Navbar/NewNavbar';
+// import Products from '../../pages/Products/Products';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function Payed() {
+    const navigate = useNavigate();
     return (
         <>
-            <NewNav className="mb-5"></NewNav>
             <div className="text-center" style={{ marginTop: '150px' }}>
                 <h1>Transaction Completed</h1>
-                <CheckCircleIcon
-                    style={{ fill: 'white', width: '50px', height: '50px' }}
-                ></CheckCircleIcon>
+                <div>
+                    <CheckCircleIcon
+                        style={{ fill: 'white', width: '50px', height: '50px' }}
+                    ></CheckCircleIcon>
+                </div>
+                <Button
+                    onClick={() => {
+                        navigate('/');
+                    }}
+                    variant="contained"
+                    className="mt-3"
+                >
+                    Home
+                </Button>
             </div>
             <div
                 className="mx-auto mt-3 mb-3"
                 style={{
                     width: '90%',
                     height: '15px',
-                    backgroundColor: 'green',
+                    backgroundColor: '#fff',
                     borderRadius: '15px',
                 }}
             ></div>
-            <Products></Products>
+
+            {/* <Products></Products> */}
         </>
     );
 }

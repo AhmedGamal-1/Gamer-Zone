@@ -1,15 +1,14 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { gamesAction } from '../../redux/store/getAllData';
 import Loading from '../Loading/Loading';
 
 import './payment.css';
-import NewNav from '../Navbar/NewNavbar';
 import { useCart } from '../../context/CartContext';
 import ProductCard from '../Card/Card';
 import { Button } from '@mui/material';
-export default function Paypal() {
+export default function Paypal({ price }) {
     const { id } = useParams();
     const [payed, setPayed] = useState(false);
     const paypal = useRef();
@@ -64,9 +63,7 @@ export default function Paypal() {
     if (!payed && oneGame)
         return (
             <div className=" mt-5 ">
-                <div style={{ marginBottom: '150px' }}>
-                    <NewNav></NewNav>
-                </div>
+                <div style={{ marginBottom: '150px' }}></div>
                 <div className="container">
                     <div
                         className="row"
