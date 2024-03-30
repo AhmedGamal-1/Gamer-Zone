@@ -18,7 +18,7 @@ export default function Cart() {
         removeFromCart(id);
     };
     return (
-        <>
+        <div className="cartPage">
             <div className="container-fluid">
                 <div className="row gy-5">
                     <div className="col-lg-9  order-md-0  order-1">
@@ -109,6 +109,6 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

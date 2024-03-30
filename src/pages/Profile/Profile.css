@@ -1,3 +1,6 @@
+.profile {
+    margin-bottom: 60px;
+}
 .profile .cover {
     width: 100%;
     position: relative;
@@ -10,7 +13,7 @@
 }
 .profile .profileImg {
     position: absolute;
-
+    color: white;
     bottom: -50px;
     left: 180px;
     display: flex;
@@ -19,7 +22,8 @@
 .profile .profileImg img {
     width: 120px;
     height: 120px;
-    filter: invert(1);
+    filter: invert(86%) sepia(100%) saturate(0%) hue-rotate(127deg)
+        brightness(103%) contrast(104%);
     margin-inline-end: 20px;
 }
 .profile .profileImg .name {
@@ -31,4 +35,5 @@
     font-size: 2rem;
     margin-top: 120px;
     font-weight: 600;
+    color: white;
 }

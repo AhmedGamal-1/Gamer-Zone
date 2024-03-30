@@ -92,13 +92,9 @@ function Home() {
                                 key={index}
                                 className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}
                             >
-                                <Link
-                                    to={`/products/${product.id}`}
-                                    className={homeStyle.linkStyle}
-                                >
-                                    {' '}
+                                <div className={homeStyle.linkStyle}>
                                     <ProductCard product={product} />
-                                </Link>{' '}
+                                </div>
                             </div>
                         ))
                     ) : (
@@ -136,13 +132,10 @@ function Home() {
                                 key={index}
                                 className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}
                             >
-                                <Link
-                                    to={`/products/${product.id}`}
-                                    className={homeStyle.linkStyle}
-                                >
+                                <div className={homeStyle.linkStyle}>
                                     {' '}
                                     <ProductCard product={product} />
-                                </Link>{' '}
+                                </div>{' '}
                             </div>
                         ))
                     ) : (
@@ -154,8 +147,6 @@ function Home() {
 
                 <div className="showButton my-5 text-center">
                     <Link to="/products" className={homeStyle.linkStyle}>
-                        {' '}
-                        {''}
                         <button className={`${homeStyle.showButton} px-3 py-2`}>
                             <span>Show More</span>
                             <i className="fa-solid fa-arrow-right-long text-white"></i>
@@ -183,13 +174,10 @@ function Home() {
                                 key={index}
                                 className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}
                             >
-                                <Link
-                                    to={`/products/${product.id}`}
-                                    className={homeStyle.linkStyle}
-                                >
+                                <div className={homeStyle.linkStyle}>
                                     {' '}
                                     <ProductCard product={product} />
-                                </Link>{' '}
+                                </div>{' '}
                             </div>
                         ))
                     ) : (
