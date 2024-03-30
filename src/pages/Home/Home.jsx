@@ -13,7 +13,6 @@ function Home() {
 
     async function getProductData() {
         let { data } = await Axios.get('http://localhost:2024/products');
-        console.log(data);
         setProducts(data);
     }
 

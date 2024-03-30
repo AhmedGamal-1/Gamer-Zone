@@ -7,8 +7,6 @@ import { BallTriangle } from 'react-loader-spinner';
 import './ProductDetails.css';
 function ProductDetails() {
     let { id } = useParams();
-    // id = Number(id);
-
     const [item, setItem] = useState();
     const [fav, setFav] = useState();
     const [catg, setCatg] = useState();
