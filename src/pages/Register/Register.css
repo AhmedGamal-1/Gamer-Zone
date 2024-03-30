@@ -1,7 +1,7 @@
 .register-holder {
     display: flex;
     gap: 6rem;
-    height: 100vh;
+    min-height: 100vh;
 }
 .register-image {
     position: relative;

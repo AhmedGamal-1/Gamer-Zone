@@ -28,6 +28,11 @@
     border-width: 2px;
     outline: none;
 }
+.error-message {
+    color: var(--color-var4);
+    margin-top: 1rem;
+}
+
 .register-btn {
     background-color: transparent;
     border: 1px solid var(--color-var4);
