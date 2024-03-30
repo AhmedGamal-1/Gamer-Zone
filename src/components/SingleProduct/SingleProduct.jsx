@@ -6,9 +6,11 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useFavorites } from '../../context/FavoritesContext';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useCart } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 export default function SingleProduct({ item, fav }) {
     const { toggleFavorite } = useFavorites();
     const { cart, addToCart } = useCart();
+    const navigate = useNavigate();
     console.log(cart);
 
     //fav toggle
@@ -17,16 +19,15 @@ export default function SingleProduct({ item, fav }) {
     };
     const handleAddToCart = (item) => {
         addToCart(item);
+        navigate(`/checkout/${item.id}`);
     };
     return (
-
         <div className="singleProductGames">
             {item && (
                 <div className="myCard">
                     <div
                         className="img"
                         style={{
-
                             background: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%),  url(/images/${item.image})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
@@ -47,20 +48,17 @@ export default function SingleProduct({ item, fav }) {
                                             defaultValue={item.rating}
                                             precision={0.5}
                                             readOnly
-
                                         />
                                     </div>
                                 </div>
                                 <div className="desc">{item.description}</div>
                                 <div className="buttons">
-
                                     <button
                                         className="product-btn"
                                         onClick={() => {
                                             handleAddToCart(item);
                                         }}
                                     >
-
                                         <span>BUY</span>
                                         <span>{item.price} EGP</span>
                                     </button>
@@ -78,14 +76,12 @@ export default function SingleProduct({ item, fav }) {
                                         <CardGiftcardIcon></CardGiftcardIcon>
                                     </button>
 
-
                                     <button
                                         className="product-btn "
                                         onClick={() => {
                                             handleAddToCart(item);
                                         }}
                                     >
-
                                         <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
                                     </button>
                                 </div>
