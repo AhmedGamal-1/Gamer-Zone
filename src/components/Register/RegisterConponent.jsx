@@ -104,11 +104,13 @@ function RegisterConponent() {
                     />
                 </div>
 
-                {errorList.length > 0 && IputValidator('name') ? (
-                    <div>{errorList && IputValidator('name')}</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('name') ? (
+                        <div>{errorList && IputValidator('name')}</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
                     <label className="register-label" htmlFor="email">
                         Email
@@ -122,11 +124,14 @@ function RegisterConponent() {
                         placeholder="Please Write Your Email"
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('email') ? (
-                    <div>{errorList && IputValidator('email')}</div>
-                ) : (
-                    ''
-                )}
+
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('email') ? (
+                        <div>{errorList && IputValidator('email')}</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
                     <label className="register-label" htmlFor="password">
                         Password
@@ -140,11 +145,13 @@ function RegisterConponent() {
                         placeholder="Please Write Your Password"
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('password') ? (
-                    <div>invalid Password</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('password') ? (
+                        <div>invalid Password</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
                     <label className="register-label" htmlFor="rePassword">
                         confirm Password
@@ -158,11 +165,13 @@ function RegisterConponent() {
                         placeholder="Please Re-enter Your Password"
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('rePassword') ? (
-                    <div>invalid Password</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('rePassword') ? (
+                        <div>invalid Password</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
                     <label className="register-label" htmlFor="phone">
                         Phone
@@ -176,12 +185,16 @@ function RegisterConponent() {
                         placeholder="Please enter Your Phone"
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('phone') ? (
-                    <div>{errorList && IputValidator('phone')}</div>
-                ) : (
-                    ''
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('phone') ? (
+                        <div>{errorList && IputValidator('phone')}</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
+                {registerError && (
+                    <div className="error-message">{registerError}</div>
                 )}
-                {registerError && <div>{registerError}</div>}
                 <button className="register-btn">
                     {isLoading ? (
                         <i className="fa-solid fa-gamepad fa-beat"></i>

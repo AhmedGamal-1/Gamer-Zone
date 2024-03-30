@@ -102,11 +102,13 @@ function LoginComponent() {
                         ref={inputRef}
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('email') ? (
-                    <div>{errorList && IputValidator('email')}</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('email') ? (
+                        <div>{errorList && IputValidator('email')}</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
                     <label className="login-label" htmlFor="password">
                         Password
@@ -120,11 +122,13 @@ function LoginComponent() {
                         ref={inputRef}
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('password') ? (
-                    <div>invalid Email or Password</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('password') ? (
+                        <div>invalid Email or Password</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <button className="login-btn">
                     {isLoading ? (
                         <i className="fa-solid fa-gamepad fa-beat"></i>
