@@ -16,7 +16,9 @@ import { setLogin } from './redux/store/LoginSlice/LoginSlice';
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import Layout from './components/Layout/Layout';
 
 function App() {
     const dispatch = useDispatch();
@@ -30,26 +32,28 @@ function App() {
             <CartProvider>
                 <FavoritesProvider>
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/products" element={<Products />} />
-                        <Route
-                            path="/products/:id"
-                            element={<ProductDetails />}
-                        />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/favorites" element={<Favorites />} />
-                        <Route
-                            path="/checkout"
-                            element={
-                                <ProtectedRoute>
-                                    <Paypal />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route path="/cart" element={<Cart />} />
-                        <Route path="/profile" element={<Profile />} />
-                        <Route path="/*" element={<Error />} />
+                        <Route path="/" element={<Layout />}>
+                            <Route index element={<Home />} />
+                            <Route path="/products" element={<Products />} />
+                            <Route
+                                path="/products/:id"
+                                element={<ProductDetails />}
+                            />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/favorites" element={<Favorites />} />
+                            <Route
+                                path="/checkout"
+                                element={
+                                    <ProtectedRoute>
+                                        <Paypal />
+                                    </ProtectedRoute>
+                                }
+                            />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/profile" element={<Profile />} />
+                            <Route path="/*" element={<Error />} />
+                        </Route>
                     </Routes>
                 </FavoritesProvider>
             </CartProvider>

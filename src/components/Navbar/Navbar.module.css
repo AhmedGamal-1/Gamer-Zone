@@ -1,0 +1,26 @@
+.navText {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.signButton button {
+  background-color: #ff4136;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .signButton {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .signButton button {
+    font-size: 13px !important;
+  }
+  .smallMedia {
+    /* text-align: center; */
+    margin-left: 2% !important;
+    margin-top: 20px;
+  }
+}

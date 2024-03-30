@@ -1,7 +1,9 @@
+// Store.jsx
 import { configureStore } from '@reduxjs/toolkit';
-import { gamesReducers } from './getAllData';
+import gamesReducers from './getAllData'; // Import gamesReducers
 
-const Store = configureStore({
+const store = configureStore({
     reducer: { allGames: gamesReducers },
 });
-export default Store;
+
+export default store;
