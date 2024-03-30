@@ -25,7 +25,7 @@ function Home() {
 
     return (
         <>
-            <Navbar />
+            
             {/* Start landing-image section */}
             <div className="landing-image position-relative">
                 <div className="carousel-inner ">
@@ -80,7 +80,7 @@ function Home() {
             {/* Start Console Product section */}
             <div className="container" style={{ marginTop: '100px' }}>
                 <div className={`${homeStyle.textContent} mb-4`}>
-                    <h4 className="fw-bold">Gaming Consoles Collection</h4>
+                    <h4 className="fw-bold text-white">Gaming Consoles Collection</h4>
                     <p style={{ color: '#ff4136' }}>
                         The Best in Gaming Consoles
                     </p>
@@ -118,7 +118,7 @@ function Home() {
             {/* Start Accessory section */}
             <div className="container my-5">
                 <div className={`${homeStyle.textContent} mb-4`}>
-                    <h4 className="fw-bold">Accessory Favorites</h4>
+                    <h4 className="fw-bold text-white">Accessory Favorites</h4>
                     <p style={{ color: '#ff4136' }}>
                         Level Up Your Setup with Our Favorite Accessories
                     </p>
@@ -157,7 +157,7 @@ function Home() {
 
             <div className="container my-5">
                 <div className="text-content mb-4">
-                    <h4 className={`${homeStyle.textContent} fw-bold`}>Games</h4>
+                    <h4 className={`${homeStyle.textContent} fw-bold text-white`}>Games</h4>
                 </div>
 
                 <div className="row justify-content-center align-item-center text-center">
@@ -192,7 +192,7 @@ function Home() {
             {/* Start Keyboard, Mouse And Headsets Section */}
             <div className="container">
                 <div className={`mb-5 `}>
-                    <h4 className={`${homeStyle.textContent} fw-bold`}>Keyboard, Mouse And Headsets</h4>
+                    <h4 className={`${homeStyle.textContent} fw-bold text-white`}>Keyboard, Mouse And Headsets</h4>
                 </div>
                 <div className="row mb-5">
                     <div className="col-md-6">
@@ -224,9 +224,6 @@ function Home() {
             </div>
             {/* End Keyboard, Mouse And Headsets Section */}
             
-            {/* Start Footer */}
-            <Footer />
-            {/* End Footer */}
         </>
     );
 }
