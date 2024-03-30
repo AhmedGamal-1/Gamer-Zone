@@ -90,8 +90,11 @@ function LoginComponent() {
         <>
             <form onSubmit={handleSubmition} className="login-form">
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label className="login-label" htmlFor="email">
+                        Email
+                    </label>
                     <input
+                        className="login-input"
                         type="text"
                         id="email"
                         name="email"
@@ -105,8 +108,11 @@ function LoginComponent() {
                     ''
                 )}
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label className="login-label" htmlFor="password">
+                        Password
+                    </label>
                     <input
+                        className="login-input"
                         type="password"
                         id="password"
                         name="password"

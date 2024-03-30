@@ -6,7 +6,6 @@ import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox
 import { Link } from 'react-router-dom';
 export default function Cart() {
     const { cart, addToCart, decreaseCart, removeFromCart } = useCart();
-    console.log(cart);
     const totalPrice = cart.reduce((acc, el) => acc + el.price * el.counter, 0);
 
     const handleIncrease = (el) => {

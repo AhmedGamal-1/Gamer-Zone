@@ -90,8 +90,11 @@ function RegisterConponent() {
         <>
             <form onSubmit={handleSubmition} className="register-form">
                 <div>
-                    <label htmlFor="name">User Name</label>
+                    <label className="register-label" htmlFor="name">
+                        User Name
+                    </label>
                     <input
+                        className="register-input"
                         type="text"
                         id="name"
                         name="name"
@@ -107,8 +110,11 @@ function RegisterConponent() {
                     ''
                 )}
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label className="register-label" htmlFor="email">
+                        Email
+                    </label>
                     <input
+                        className="register-input"
                         type="text"
                         id="email"
                         name="email"
@@ -122,8 +128,11 @@ function RegisterConponent() {
                     ''
                 )}
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label className="register-label" htmlFor="password">
+                        Password
+                    </label>
                     <input
+                        className="register-input"
                         type="password"
                         id="password"
                         name="password"
@@ -137,8 +146,11 @@ function RegisterConponent() {
                     ''
                 )}
                 <div>
-                    <label htmlFor="rePassword">confirm Password</label>
+                    <label className="register-label" htmlFor="rePassword">
+                        confirm Password
+                    </label>
                     <input
+                        className="register-input"
                         type="password"
                         id="rePassword"
                         name="rePassword"
@@ -152,8 +164,11 @@ function RegisterConponent() {
                     ''
                 )}
                 <div>
-                    <label htmlFor="phone">Phone</label>
+                    <label className="register-label" htmlFor="phone">
+                        Phone
+                    </label>
                     <input
+                        className="register-input"
                         type="tel"
                         id="phone"
                         name="phone"
