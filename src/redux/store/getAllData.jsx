@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const gamesAction = createAsyncThunk('/getAllGames', async () => {
     const res = await axios.get('http://localhost:2024/products');
-    console.log(res);
     return res.data;
 });
 const gamesSlice = createSlice({

@@ -12,7 +12,6 @@ function Products() {
     const [newProducts, setNewProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrnetPage] = useState(1);
-
     const [postsPerPage] = useState(12);
     const [filter, setFilter] = useState({
         category: {
