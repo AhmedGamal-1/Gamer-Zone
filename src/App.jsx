@@ -1,9 +1,7 @@
 import Home from './pages/Home/Home';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
-import Favorites from '../src/pages/Favorites/Favorites';
 import Products from './pages/Products/Products';
 import Profile from './pages/Profile/Profile';
-import Paypal from './components/Payment/Paypal';
 import Cart from './pages/Cart/Cart';
 import Error from './pages/Error/Error';
 import Register from './pages/Register/Register';
@@ -19,6 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import Layout from './components/Layout/Layout';
+import Payed from './pages/Checkout/Checkout';
 
 function App() {
     const dispatch = useDispatch();
@@ -36,24 +35,24 @@ function App() {
                             <Route index element={<Home />} />
                             <Route path="/products" element={<Products />} />
                             <Route
-                                path="/products/:id"
-                                element={<ProductDetails />}
-                            />
-                            <Route path="/register" element={<Register />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/favorites" element={<Favorites />} />
-                            <Route
-                                path="/checkout"
+                                path="/payed"
                                 element={
                                     <ProtectedRoute>
-                                        <Paypal />
+                                        <Payed />
                                     </ProtectedRoute>
                                 }
                             />
+                            <Route
+                                path="/products/:id"
+                                element={<ProductDetails />}
+                            />
+
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/profile" element={<Profile />} />
-                            <Route path="/*" element={<Error />} />
                         </Route>
+                        <Route path="/*" element={<Error />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/login" element={<Login />} />
                     </Routes>
                 </FavoritesProvider>
             </CartProvider>

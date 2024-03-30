@@ -13,21 +13,31 @@ export default function Profile() {
                 {' '}
                 <div className="profileImg">
                     <img src="/images/profile.png"></img>
-                    <div className="name">{isLogged.name}</div>
+                    <div className="name">{isLogged?.name}</div>
                 </div>
             </div>
 
             <div className="container-fluid">
-                <div className="fav-title">Favorites</div>
-                <div className="fav">
-                    <div className="row gy-5">
-                        {favorites.map((el) => (
-                            <div className="col-3" key={el.id}>
-                                <ProductCard product={el}></ProductCard>
-                            </div>
-                        ))}
+                {favorites.length === 0 ? (
+                    <div className="heartGif">
+                        {' '}
+                        <img src="/images/heartrm.gif"></img>
+                        <h3>You don&apos;t have favorites yet </h3>
                     </div>
-                </div>
+                ) : (
+                    <>
+                        <div className="fav-title">Favorites</div>
+                        <div className="fav">
+                            <div className="row gy-5">
+                                {favorites.map((el) => (
+                                    <div className="col-3" key={el.id}>
+                                        <ProductCard product={el}></ProductCard>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );

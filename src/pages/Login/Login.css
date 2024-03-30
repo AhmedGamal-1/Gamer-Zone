@@ -7,8 +7,15 @@
     position: relative;
     overflow: hidden;
 }
+.login .authLogo {
+    position: absolute;
+    top: -130px;
+    right: 0;
+}
+
 .login {
     align-self: center;
+    position: relative;
 }
 .login-image :nth-child(2) {
     position: absolute;

@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import logo from '../../assets/images/logo1.png';
 import navbarStyle from '../Navbar/Navbar.module.css';
@@ -46,7 +46,7 @@ const Navbar = () => {
     return (
         <div>
             <nav
-                className="navbar navbar-expand-lg"
+                className={`navbar navbar-expand-lg ${navbarStyle.shift}`}
                 data-bs-theme="dark"
                 style={{ backgroundColor: '#06131D' }}
             >
@@ -74,20 +74,22 @@ const Navbar = () => {
                             style={{ marginLeft: '35%' }}
                         >
                             <li className="nav-item">
-                                <Link
+                                <NavLink
+                                    activeClassName="activeLink"
                                     className={`${navbarStyle.navText} nav-link text-light`}
                                     to="/"
                                 >
                                     Home
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link
+                                <NavLink
+                                    activeClassName="activeLink"
                                     className={`${navbarStyle.navText} nav-link text-light`}
                                     to="/products"
                                 >
                                     Products
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
                                 <button
