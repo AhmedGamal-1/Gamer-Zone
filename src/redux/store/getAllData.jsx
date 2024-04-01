@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const gamesAction = createAsyncThunk('/getAllGames', async () => {
-    const res = await axios.get('http://localhost:2024/products');
+    const res = await axios.get(
+        'https://gamerzoneserver1.onrender.com/products'
+    );
     console.log(res);
     return res.data;
 });

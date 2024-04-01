@@ -5,14 +5,14 @@
 .singleProductGames .myCard .img {
     min-height: 90vh;
     width: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background: linear-gradient(
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    /* background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 0.9557072829131653) 0%,
         rgba(0, 0, 0, 0) 100%
-    );
+    ); */
 }
 a {
     text-decoration: none !important;
@@ -110,6 +110,9 @@ a {
     .content .buttons button:first-child {
         width: 100%;
         margin-bottom: 15px;
+    }
+    .content .buttons a:first-child {
+        width: 100%;
     }
     .content .buttons {
         justify-content: center;

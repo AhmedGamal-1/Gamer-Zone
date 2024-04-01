@@ -1,5 +1,6 @@
 import { InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import './Search.css';
 
 function Search({ searchQuery, setSearchQuery }) {
     const handleSearchChange = (e) => {
@@ -14,7 +15,7 @@ function Search({ searchQuery, setSearchQuery }) {
                         color: 'black',
                         backgroundColor: 'white',
                         borderRadius: '15px',
-                        minWidth: '450px',
+                        minWidth: '310px',
                         height: '40px',
                     },
                     startAdornment: (

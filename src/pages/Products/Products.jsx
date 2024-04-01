@@ -31,7 +31,9 @@ function Products() {
     // fetch all products
     useEffect(() => {
         const fetchProducts = async () => {
-            const response = await fetch('http://localhost:2024/products');
+            const response = await fetch(
+                'https://gamerzoneserver1.onrender.com/products'
+            );
             const data = await response.json();
             setProducts(data);
             setLoading(false);
