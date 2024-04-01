@@ -10,17 +10,18 @@ function FacebookLoginBtn() {
     return (
         <>
             <LoginSocialFacebook
-                appId="1416158575697601"
+                appId="391220863767601"
                 onResolve={(response) => {
                     localStorage.setItem(
                         'userToken',
                         response.data.signedRequest
                     );
                     dispatch(setLogin());
+                    console.log('from face');
                     navigator('/');
                 }}
                 onReject={(error) => {
-                    console.log(error);
+                    console.log(error, 'from error');
                 }}
             >
                 <FacebookLoginButton className="Facebook-login-button" />

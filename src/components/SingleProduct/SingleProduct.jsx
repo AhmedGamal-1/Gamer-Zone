@@ -52,9 +52,7 @@ export default function SingleProduct({ item, fav }) {
                                 </div>
                                 <div className="desc">{item.description}</div>
                                 <div className="buttons">
-                                    <Link
-                                        to={isLogged ? '/checkout' : '/login'}
-                                    >
+                                    <Link to="/cart">
                                         <button
                                             className="product-btn"
                                             onClick={() => {
