@@ -15,19 +15,26 @@ function ProductDetails() {
     const [products, setProducts] = useState();
 
     useEffect(() => {
-        axios
-            .get('http://localhost:2024/products')
-            .then((res) => {
-                const foundItem = res.data.find((el) => el.id === id);
-                setProducts(res.data);
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(
+                    'https://gamerzoneserver1.onrender.com/products'
+                );
+                const foundItem = await response.data.find(
+                    (el) => el.id === +id
+                );
+                setProducts(response.data);
                 setItem(foundItem);
                 setFav(isFavorite(foundItem?.id));
                 setCatg(foundItem?.category);
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error('Error fetching products:', error);
-            });
+            }
+        };
+
+        fetchData();
     }, [id, isFavorite, catg]);
+
     window.scrollTo(0, 0);
     if (!item)
         return (
@@ -69,8 +76,11 @@ function ProductDetails() {
                     {products
                         .filter((game) => game.category !== item.category)
                         .map((game) => (
-                            <div key={game.id} className="col-3">
-                                <div style={{ textDecoration: 'none' }}>
+                            <div key={game.id} className="col-lg-3 col-md-4">
+                                <div
+                                    style={{ textDecoration: 'none' }}
+                                    className="recommendationsProducts"
+                                >
                                     <ProductCard product={game}></ProductCard>
                                 </div>
                             </div>

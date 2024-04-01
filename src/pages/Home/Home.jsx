@@ -13,7 +13,9 @@ function Home() {
     let [product, setProducts] = useState([]);
 
     async function getProductData() {
-        let { data } = await Axios.get('http://localhost:2024/products');
+        let { data } = await Axios.get(
+            'https://gamerzoneserver1.onrender.com/products'
+        );
         setProducts(data);
     }
 
@@ -128,7 +130,7 @@ function Home() {
                 </div>
                 <div className="row justify-content-center align-item-center text-center">
                     {product.length > 0 ? (
-                        product.slice(10, 14).map((product, index) => (
+                        product.slice(9, 13).map((product, index) => (
                             <div
                                 key={index}
                                 className={`${homeStyle.card} col-md-6 col-lg-3 col-sm-12 product-card`}

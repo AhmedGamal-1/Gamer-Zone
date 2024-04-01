@@ -4,7 +4,6 @@ import Joi from 'joi';
 import { useDispatch } from 'react-redux';
 import { setLogin } from '../../redux/store/LoginSlice/LoginSlice';
 import './LoginComponent.css';
-import { TextField } from '@mui/material';
 function LoginComponent() {
     //Redux
     const dispatch = useDispatch();
@@ -99,6 +98,8 @@ function LoginComponent() {
                         type="text"
                         id="email"
                         name="email"
+                        onChange={GetUserLoginForm}
+                        ref={inputRef}
                     />
                 </div>
                 <div className="error-message">

@@ -7,11 +7,9 @@ import { useFavorites } from '../../context/FavoritesContext';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useCart } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 export default function SingleProduct({ item, fav }) {
     const { toggleFavorite } = useFavorites();
     const { addToCart } = useCart();
-    const isLogged = useSelector((state) => state.isLogged);
 
     //fav toggle
     const handleToggle = () => {
@@ -27,10 +25,10 @@ export default function SingleProduct({ item, fav }) {
                     <div
                         className="img"
                         style={{
-                            background: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%),  url(/images/${item.image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
+                            background: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%), url(/images/${item.image})`,
+                            // backgroundSize: 'cover',
+                            // backgroundPosition: 'center',
+                            // backgroundRepeat: 'no-repeat',
                         }}
                     >
                         <div className="container-fluid">
