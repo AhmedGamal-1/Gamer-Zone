@@ -19,14 +19,16 @@ export const CartProvider = ({ children }) => {
             setCart([...cart, { ...product, counter: 1 }]);
         }
     };
-
-    const decreaseCart = (product) => {
-        if (product.counter === 1) {
-            setCart(cart.filter((product) => product.id !== product.id));
+    const resetCart = () => {
+        setCart([]);
+    };
+    const decreaseCart = (prd) => {
+        if (prd.counter === 1) {
+            setCart(cart.filter((product) => product.id !== prd.id));
         } else {
             setCart(
                 cart.map((item) =>
-                    item.id === product.id
+                    item.id === prd.id
                         ? { ...item, counter: item.counter - 1 }
                         : item
                 )
@@ -43,7 +45,7 @@ export const CartProvider = ({ children }) => {
 
     return (
         <CartContext.Provider
-            value={{ cart, addToCart, decreaseCart, removeFromCart }}
+            value={{ cart, addToCart, decreaseCart, removeFromCart, resetCart }}
         >
             {children}
         </CartContext.Provider>

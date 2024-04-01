@@ -2,8 +2,10 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 // import Products from '../../pages/Products/Products';
 import { useNavigate } from 'react-router-dom';
 import './Checkout.css';
+import { useCart } from './../../context/CartContext';
 export default function Payed() {
     const navigate = useNavigate();
+    const { resetCart } = useCart();
     return (
         <div className="paymentSuccess">
             <div className="text-center" style={{ marginTop: '150px' }}>
@@ -16,6 +18,7 @@ export default function Payed() {
                 <button
                     onClick={() => {
                         navigate('/');
+                        resetCart();
                     }}
                     className="mt-3"
                 >

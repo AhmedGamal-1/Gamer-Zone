@@ -56,61 +56,7 @@ export default function Paypal({ price }) {
     //             <Loading></Loading>
     //         </div>
     //     );
-    if (!payed)
-        return (
-            // <div className=" mt-5 ">
-            //     <div style={{ marginBottom: '150px' }}></div>
-            //     <div className="container">
-            //         <div
-            //             className="row"
-            //             style={{
-            //                 backgroundColor: '#252525',
-            //                 borderRadius: '35px',
-            //             }}
-            //         >
-            //             <div className="col-9 d-flex">
-            //                 {cart.length > 0 ? (
-            //                     cart.map((product) => {
-            //                         return (
-            //                             <div className="col-4" key={product.id}>
-            //                                 <ProductCard
-            //                                     product={product}
-            //                                 ></ProductCard>
-            //                             </div>
-            //                         );
-            //                     })
-            //                 ) : (
-            //                     <div className="col-12 d-flex justify-content-center align-items-center flex-column">
-            //                         <h1>No Products In Your Cart</h1>
-            //                         <div className="mt-5">
-            //                             <Button
-            //                                 variant="outlined"
-            //                                 onClick={() => [
-            //                                     navigate('/products'),
-            //                                 ]}
-            //                             >
-            //                                 Discover More Products
-            //                             </Button>
-            //                         </div>
-            //                     </div>
-            //                 )}
-            //             </div>
-            //             <div className="col-3  d-flex justify-content-center align-items-center">
-            //                 <div
-            //                     className="me-3"
-            //                     style={{
-            //                         height: '100%',
-            //                         backgroundColor: '#fff',
-            //                         borderRadius: '15px',
-            //                         padding: '2px',
-            //                     }}
-            //                 ></div>
-            <div className="mt-5" ref={paypal}></div>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div>
-        );
+    if (!payed) return <div className="mt-5" ref={paypal}></div>;
     else if (payed) {
         return <>{navigate('/payed')}</>;
     }

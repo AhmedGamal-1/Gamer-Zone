@@ -6,7 +6,7 @@ import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox
 import { Link, useNavigate } from 'react-router-dom';
 import Paypal from '../../components/Payment/Paypal';
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 export default function Cart() {
     const { cart, addToCart, decreaseCart, removeFromCart } = useCart();
     const navigate = useNavigate();

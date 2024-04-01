@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
 }
-.login .authLogo {
+.authLogo {
     position: absolute;
     top: -130px;
     right: 0;
