@@ -8,6 +8,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 30px;
+    color: white;
 }
 .video {
     width: 100%;
@@ -18,4 +19,7 @@
     .video {
         height: 350px;
     }
+}
+.recommendationsProducts {
+    height: 100%;
 }

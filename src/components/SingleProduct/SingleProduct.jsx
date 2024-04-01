@@ -7,13 +7,10 @@ import { useFavorites } from '../../context/FavoritesContext';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useCart } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 export default function SingleProduct({ item, fav }) {
     const { toggleFavorite } = useFavorites();
-    const { cart, addToCart } = useCart();
-    const isLogged = useSelector((state) => state.isLogged);
-    //Handle Log In
-    // const handle
+    const { addToCart } = useCart();
+
     //fav toggle
     const handleToggle = () => {
         toggleFavorite(item);
@@ -28,10 +25,10 @@ export default function SingleProduct({ item, fav }) {
                     <div
                         className="img"
                         style={{
-                            background: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%),  url(/images/${item.image})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
+                            background: `linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%), url(/images/${item.image})`,
+                            // backgroundSize: 'cover',
+                            // backgroundPosition: 'center',
+                            // backgroundRepeat: 'no-repeat',
                         }}
                     >
                         <div className="container-fluid">
@@ -53,9 +50,7 @@ export default function SingleProduct({ item, fav }) {
                                 </div>
                                 <div className="desc">{item.description}</div>
                                 <div className="buttons">
-                                    <Link
-                                        to={isLogged ? '/checkout' : '/login'}
-                                    >
+                                    <Link to="/cart">
                                         <button
                                             className="product-btn"
                                             onClick={() => {

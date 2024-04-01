@@ -90,8 +90,11 @@ function LoginComponent() {
         <>
             <form onSubmit={handleSubmition} className="login-form">
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label className="login-label" htmlFor="email">
+                        Email
+                    </label>
                     <input
+                        className="login-input"
                         type="text"
                         id="email"
                         name="email"
@@ -99,14 +102,19 @@ function LoginComponent() {
                         ref={inputRef}
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('email') ? (
-                    <div>{errorList && IputValidator('email')}</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('email') ? (
+                        <div>{errorList && IputValidator('email')}</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label className="login-label" htmlFor="password">
+                        Password
+                    </label>
                     <input
+                        className="login-input"
                         type="password"
                         id="password"
                         name="password"
@@ -114,11 +122,13 @@ function LoginComponent() {
                         ref={inputRef}
                     />
                 </div>
-                {errorList.length > 0 && IputValidator('password') ? (
-                    <div>invalid Email or Password</div>
-                ) : (
-                    ''
-                )}
+                <div className="error-message">
+                    {errorList.length > 0 && IputValidator('password') ? (
+                        <div>invalid Email or Password</div>
+                    ) : (
+                        ''
+                    )}
+                </div>
                 <button className="login-btn">
                     {isLoading ? (
                         <i className="fa-solid fa-gamepad fa-beat"></i>

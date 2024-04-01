@@ -1,6 +1,7 @@
 import FacebookLoginBtn from '../../components/FacebookLoginBtn/FacebookLoginBtn';
 import GoogleLoginBtn from '../../components/GoogleLoginBtn/GoogleLoginBtn';
 import RegisterComponent from '../../components/Register/RegisterConponent';
+import { Link } from 'react-router-dom';
 import './Register.css';
 export default function Register() {
     return (
@@ -10,6 +11,14 @@ export default function Register() {
                 <img src="/public/images/Overlay.png" alt="overlay" />
             </div>
             <div className="register">
+                <Link to="/">
+                    <img
+                        src="../src/assets/images/logo1.png"
+                        width="150px"
+                        height="50px"
+                        className="authLogo"
+                    ></img>
+                </Link>
                 <h3 className="welcome">Welcome</h3>
                 <RegisterComponent />
                 <div className="or">-OR-</div>

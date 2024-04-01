@@ -4,9 +4,8 @@ import './Products.css';
 import Loading from '../../components/Loading/Loading';
 import PaginationControlled from '../../components/Pagination/PaginationControlled';
 import Filter from '../../components/Filter/Filter';
-
 import Search from '../../components/Search/Search';
-import { Link } from 'react-router-dom';
+
 function Products() {
     const [products, setProducts] = useState([]);
     const [newProducts, setNewProducts] = useState([]);
@@ -32,7 +31,9 @@ function Products() {
     // fetch all products
     useEffect(() => {
         const fetchProducts = async () => {
-            const response = await fetch('http://localhost:2024/products');
+            const response = await fetch(
+                'https://gamerzoneserver1.onrender.com/products'
+            );
             const data = await response.json();
             setProducts(data);
             setLoading(false);
@@ -103,7 +104,6 @@ function Products() {
 
     return (
         <div className="mt-5">
-            <Link to="/cart">Cart</Link>
             <div className="container-fluid">
                 {/* search input */}
                 <div className="d-flex justify-content-center my-4">
